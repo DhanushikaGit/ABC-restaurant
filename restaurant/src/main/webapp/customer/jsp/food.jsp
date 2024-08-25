@@ -4,7 +4,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Food Menu</title>
+    <title> ABC Restaurant Food Menu</title>
     <style>
         :root {
             --primary: #FEA116;
@@ -182,13 +182,12 @@
     
     
       <meta charset="utf-8">
-    <title>Restoran - Bootstrap Restaurant Template</title>
+    
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
 
-    <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
+    <link href="/restaurant/customer/images/A B C (1).png" rel="icon">
 
   
     
@@ -206,17 +205,20 @@
        <%@ include file="header.jsp" %>
     <div class="container-xxl py-5 bg-dark hero-header mb-5">
                 <div class="container text-center my-5 pt-5 pb-4">
-                    <h1 class="display-3 text-white mb-3 animated slideInDown">About Us</h1>
+                    <h1 class="display-3 text-white mb-3 animated slideInDown">Order Your Favorites</h1>
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb justify-content-center text-uppercase">
                             <li class="breadcrumb-item"><a href="#">Home</a></li>
                             <li class="breadcrumb-item"><a href="#">Pages</a></li>
-                            <li class="breadcrumb-item text-white active" aria-current="page">About</li>
+                            <li class="breadcrumb-item text-white active" aria-current="page">Our Food Menu</li>
                         </ol>
                     </nav>
                 </div>
             </div>
-    <h2>Food Menu</h2>
+     <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                    <h5 class="section-title ff-secondary text-center text-primary fw-normal">Our Menu</h5>
+                    <h1 class="mb-5">Order Your Favorite Dish</h1>
+                </div>
 
     <form action="" method="get" class="search-bar">
         <input type="text" name="query" class="search-input" placeholder="Search by name or price..." value="<%= request.getParameter("query") != null ? request.getParameter("query") : "" %>">

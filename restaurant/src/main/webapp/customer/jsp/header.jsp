@@ -3,10 +3,13 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Restoran - Bootstrap Restaurant Template</title>
+    <title>ABC Restaurant</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
+<!-- Include jQuery before Bootstrap JavaScript -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- Favicon -->
     <link href="/restaurant/img/favicon.ico" rel="icon">
@@ -33,10 +36,6 @@
 
     <!-- Tempus Dominus Styles -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.1.5/css/tempusdominus-bootstrap-4.min.css" />
-
-    <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.1.5/js/tempusdominus-bootstrap-4.min.js"></script>
 </head>
 
 <body>
@@ -51,21 +50,22 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ms-auto py-0 pe-4">
-                    <a href="index.jsp" class="nav-item nav-link">Home</a>
-                    <a href="about.jsp" class="nav-item nav-link">About</a>
-                    <a href="service.jsp" class="nav-item nav-link">Service</a>
+                    <a href="/restaurant/customer/jsp/index.jsp" class="nav-item nav-link">Home</a>
+                    <a href="/restaurant/customer/jsp/about.jsp" class="nav-item nav-link">About</a>
+                    <a href="/restaurant/customer/jsp/service.jsp" class="nav-item nav-link">Service</a>
                     <a href="menu.jsp" class="nav-item nav-link">Menu</a>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Pages</a>
                         <div class="dropdown-menu m-0">
                             <a href="/restaurant/customer/jsp/reservation.jsp" class="dropdown-item">Booking</a>
-                            <a href="team.jsp" class="dropdown-item">Our Team</a>
-                            <a href="testimonial.jsp" class="dropdown-item">Testimonial</a>
+                            <a href="/restaurant/customer/jsp/team.jsp" class="dropdown-item">Our Team</a>
+                            <a href="testimonial.jsp" class="dropdown-item">Feedback</a>
                         </div>
                     </div>
-                    <a href="contact.jsp" class="nav-item nav-link">Contact</a>
+                    <a href="/restaurant/customer/jsp/Contact.jsp" class="nav-item nav-link">Contact</a>
                 </div>
                 <a href="/restaurant/customer/jsp/reservation.jsp" class="btn btn-primary py-2 px-4">Book A Table</a>
+                <a href="/restaurant/customer/jsp/login.jsp" class="nav-item nav-link">Log Out</a>
             </div>
         </nav>
     </div>
@@ -75,6 +75,11 @@
     <div style="padding-top: 80px;"> <!-- Adjust this value to match the height of your navbar -->
         <!-- Page content goes here -->
     </div>
+
+    <!-- jQuery and Bootstrap JS (Required for dropdown and other components) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"></script>
 </body>
 
 </html>
