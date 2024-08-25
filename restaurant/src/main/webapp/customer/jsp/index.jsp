@@ -270,7 +270,7 @@
                                     <h1 class="flex-shrink-0 display-5 text-primary mb-0" data-toggle="counter-up">50</h1>
                                     <div class="ps-4">
                                         <p class="mb-0">Popular</p>
-                                        <h6 class="text-uppercase mb-0">Master Chefs Dhanu</h6>
+                                        <h6 class="text-uppercase mb-0">Master Chefs </h6>
                                     </div>
                                 </div>
                             </div>
