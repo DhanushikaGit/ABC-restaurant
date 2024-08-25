@@ -12,13 +12,7 @@
             --dark: #0F172B;
         }
 
-        body {
-            font-family: Arial, sans-serif;
-            background-color: var(--light);
-            color: var(--dark);
-            margin: 0;
-            padding: 20px;
-        }
+       
 
         h2 {
             color: var(--primary);
