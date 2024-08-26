@@ -1,14 +1,211 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title><%= request.getAttribute("pageTitle") != null ? request.getAttribute("pageTitle") : "Modern Admin Dashboard" %></title>
-    <link rel="stylesheet" href="/restaurant/admin/css/admin.css">
     <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
 </head>
+<style>
+/* General styles */
+/* General styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f1f8ff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    height: 100vh;
+}
+
+/* Sidebar styles */
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background-color: #0f172b;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+
+.side-header {
+    padding: 20px;
+    text-align: center;
+    background-color: #fea116;
+    font-size: 22px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.side-header span {
+    color: #ffffff;
+}
+
+.side-content {
+    padding: 20px;
+}
+
+.profile {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.profile-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    background-size: cover;
+    background-position: center;
+    margin: 0 auto 10px;
+}
+
+.profile h4 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.profile small {
+    color: #fea116;
+}
+
+.side-menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+.side-menu ul li {
+    margin: 20px 0;
+}
+
+.side-menu ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+}
+
+.side-menu ul li a.active,
+.side-menu ul li a:hover {
+    background-color: #fea116;
+}
+
+.side-menu ul li a span {
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+/* Main content styles */
+.main-content {
+    margin-left: 250px;
+    padding: 20px;
+    width: calc(100% - 250px);
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f1f8ff;
+    padding: 10px 20px;
+    border-bottom: 1px solid #fea116;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.header-content label {
+    margin-right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #fea116;
+}
+
+.header-menu {
+    display: flex;
+    align-items: rignt;
+}
+
+.header-menu .search-box {
+    display: flex;
+    align-items: left;
+    margin-right: 50px;
+}
+
+.header-menu .search-box span {
+    font-size: 20px;
+    color: #fea116;
+    margin-right: 20px;
+}
+
+.header-menu .search-box input {
+    padding: 5px;
+    border: 1px solid #fea116;
+    border-radius: 4px;
+    outline: none;
+}
+
+.header-menu .notify-icon {
+    position: relative;
+    margin-right: 80px;
+    font-size: 24px;
+    color: #fea116;
+    cursor: pointer;
+}
+
+.header-menu .notify-icon .notify {
+    position: absolute;
+       margin-right: 15px;
+    background-color: #fea116;
+    color: #ffffff;
+    font-size: 12px;
+    border-radius: 50%;
+    padding: 2px 5px;
+}
+
+.header-menu .user {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.header-menu .user .bg-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #fea116;
+    background-size: cover;
+    background-position: center;
+    margin-right: 300px;
+}
+
+.header-menu .user span {
+    font-size: 18px;
+    color: #fea116;
+}
+
+</style>
 <body>
+
     <input type="checkbox" id="menu-toggle">
     <div class="sidebar">
         <div class="side-header">
