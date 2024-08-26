@@ -6,17 +6,107 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Customer</title>
-    <link rel="stylesheet" href="/restaurant/admin/css/admin.css">
+    
+     <link href="/restaurant/customer/images/A B C (1).png" rel="icon">
+    <style>
+    /* General body styles */
+body {
+    font-family: Arial, sans-serif; /* Basic font family */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    background-color: #f9f9f9; /* Light background color */
+}
+
+/* Main content container */
+.main-content {
+    margin: 20px auto; /* Centered container with top and bottom margins */
+    max-width: 800px; /* Maximum width of the container */
+    padding: 20px; /* Padding inside the container */
+    background-color: #ffffff; /* White background for the container */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+
+/* Form styling */
+form {
+    display: flex;
+    flex-direction: column; /* Stack form elements vertically */
+    gap: 16px; /* Space between form elements */
+}
+
+form label {
+    font-weight: bold; /* Bold text for labels */
+    color: #333; /* Dark text color */
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="password"] {
+    width: 100%; /* Full width */
+    padding: 10px; /* Padding inside the input */
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 4px; /* Rounded corners */
+    box-sizing: border-box; /* Include padding and border in the width */
+    font-size: 16px; /* Font size for readability */
+}
+
+form button {
+    background-color: #333; /* Dark background color for button */
+    color: #fff; /* White text color */
+    border: none; /* Remove default border */
+    padding: 10px 20px; /* Padding inside the button */
+    font-size: 16px; /* Font size */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor */
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+form button:hover {
+    background-color: #555; /* Darker background color on hover */
+}
+
+form a {
+    color: #007bff; /* Blue color for the cancel link */
+    text-decoration: none; /* Remove underline */
+    font-size: 16px; /* Font size */
+}
+
+form a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+    
+/* Page header styling */
+.page-header {
+    background-color: #ffffff; /* White background for the header */
+    padding: 20px; /* Padding inside the header */
+    border-bottom: 1px solid #ddd; /* Light border at the bottom */
+    margin-bottom: 20px; /* Space below the header */
+}
+
+.page-header h1 {
+    margin: 0; /* Remove default margin */
+    font-size: 1.5rem; /* Larger font size for the title */
+    color: #333; /* Dark gray color */
+}
+
+.page-header small {
+    color: #888; /* Light gray color for the breadcrumb */
+}
+    
+    </style>
 </head>
 <body>
 
 
-
-
+  <%@ include file="adminheader.jsp" %>
+ <div class="page-header">
+                <h1>Edit Customer Details</h1>
+                <small>Home / Edit Customer Details</small>
+            </div>
     <div class="main-content">
-        <header>
-            <h1>Edit Customer Details</h1>
-        </header>
+        
+            
         <main>
             <%
                 Connection conn = null;

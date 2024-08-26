@@ -5,16 +5,102 @@
 <head>
     <meta charset="UTF-8">
     <title>Edit Food Item</title>
-    <style>
-        body { font-family: Arial, sans-serif; padding: 20px; }
-        form { max-width: 600px; margin: 0 auto; }
-        label { display: block; margin-bottom: 5px; font-weight: bold; }
-        input, textarea, select { width: 100%; padding: 8px; margin-bottom: 10px; }
-        input[type="file"] { padding: 0; }
+<style>
+        body {
+            font-family: 'Arial', sans-serif; /* Basic font family */
+            margin: 0; /* Remove default margin */
+            padding: 0; /* Remove default padding */
+            background-color: #f4f4f4; /* Light gray background */
+        }
+
+      /* Page header styling */
+.page-header {
+    background-color: #ffffff; /* White background for the header */
+    padding: 20px; /* Padding inside the header */
+    border-bottom: 1px solid #ddd; /* Light border at the bottom */
+    margin-bottom: 20px; /* Space below the header */
+}
+
+.page-header h1 {
+    margin: 0; /* Remove default margin */
+    font-size: 1.5rem; /* Larger font size for the title */
+    color: #333; /* Dark gray color */
+}
+
+.page-header small {
+    color: #888; /* Light gray color for the breadcrumb */
+}
+      
+        form {
+            background-color: #ffffff; /* White background for the form */
+            padding: 20px; /* Padding */
+            border-radius: 8px; /* Rounded corners */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+            max-width: 600px; /* Max width */
+            margin: 20px auto; /* Centered horizontally */
+        }
+
+        form label {
+            display: block; /* Block display */
+            margin-bottom: 8px; /* Space below each label */
+            font-weight: bold; /* Bold labels */
+            color: #333; /* Dark text color */
+        }
+
+        form input[type="text"],
+        form textarea,
+        form select {
+            width: 100%; /* Full width */
+            padding: 8px; /* Padding inside inputs */
+            margin-bottom: 16px; /* Space below each input */
+            border: 1px solid #ddd; /* Light border */
+            border-radius: 4px; /* Rounded corners */
+            box-sizing: border-box; /* Include padding and border in the width and height */
+            font-size: 16px; /* Font size */
+        }
+
+        form input[type="submit"] {
+            background-color: black; /* Button background color */
+            color: #fff; /* White text */
+            border: none; /* Remove border */
+            padding: 12px 20px; /* Padding inside button */
+            font-size: 16px; /* Font size */
+            border-radius: 4px; /* Rounded corners */
+            cursor: pointer; /* Pointer cursor */
+            transition: background-color 0.3s ease; /* Smooth transition */
+        }
+
+        form input[type="submit"]:hover {
+            background-color: #e68900; /* Hover background color */
+        }
+
+        form img {
+            max-width: 200px; /* Max width */
+            max-height: 200px; /* Max height */
+            display: block; /* Block display */
+            margin-bottom: 10px; /* Space below the image */
+        }
+
+        form span {
+            display: block; /* Block display */
+            margin-bottom: 10px; /* Space below the span */
+            color: #666; /* Darker gray color */
+            font-size: 14px; /* Font size */
+        }
     </style>
+    <script>
+        function confirmDelete() {
+            return confirm('Are you sure you want to delete this food item?');
+        }
+    </script>
+       
 </head>
 <body>
-    <h2>Edit Food Item</h2>
+  <%@ include file="adminheader.jsp" %>
+    <div class="page-header">
+                <h1>Manage Food Item</h1>
+                <small>Home / Manage Food Item</small>
+            </div>
     <%
         int id = Integer.parseInt(request.getParameter("id"));
         Connection conn = null;
