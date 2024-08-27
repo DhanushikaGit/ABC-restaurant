@@ -220,6 +220,48 @@
   	<description></description>
   	<servlet-class>com.JavaWebApplication.controller.staff.DeleteReplyServlet</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>AdminManageOrderServlet</servlet-name>
+  	<display-name>AdminManageOrderServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.JavaWebApplication.controller.AdminManageOrderServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>ConfirmOrderServlet</servlet-name>
+  	<display-name>ConfirmOrderServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.JavaWebApplication.controller.staff.ConfirmOrderServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>CancelOrderServlet</servlet-name>
+  	<display-name>CancelOrderServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.JavaWebApplication.controller.staff.CancelOrderServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>EditOrderServlet</servlet-name>
+  	<display-name>EditOrderServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.JavaWebApplication.controller.staff.EditOrderServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>PendingOrderServlet</servlet-name>
+  	<display-name>PendingOrderServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.JavaWebApplication.controller.staff.PendingOrderServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>UpdateOrderServlet2</servlet-name>
+  	<display-name>UpdateOrderServlet2</display-name>
+  	<description></description>
+  	<servlet-class>com.JavaWebApplication.controller.staff.UpdateOrderServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>2EditOrderServlet</servlet-name>
+  	<display-name>2EditOrderServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.JavaWebApplication.controller.staff.EditOrderServlet</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>Register</servlet-name>
   	<url-pattern>/Register</url-pattern>
@@ -363,5 +405,33 @@
   <servlet-mapping>
   	<servlet-name>DeleteReplyServlet</servlet-name>
   	<url-pattern>/DeleteReplyServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>AdminManageOrderServlet</servlet-name>
+  	<url-pattern>/AdminManageOrderServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ConfirmOrderServlet</servlet-name>
+  	<url-pattern>/ConfirmOrderServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>CancelOrderServlet</servlet-name>
+  	<url-pattern>/CancelOrderServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>EditOrderServlet</servlet-name>
+  	<url-pattern>/EditOrderServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>PendingOrderServlet</servlet-name>
+  	<url-pattern>/PendingOrderServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>UpdateOrderServlet2</servlet-name>
+  	<url-pattern>/UpdateOrderServlet2</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>2EditOrderServlet</servlet-name>
+  	<url-pattern>/2EditOrderServlet</url-pattern>
   </servlet-mapping>
 </web-app>

@@ -5,15 +5,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Order Food</title>
-     <link href="/restaurant/customer/images/A B C (1).png" rel="icon">
+    <link href="/restaurant/customer/images/A B C (1).png" rel="icon">
     <style>
         :root {
             --primary: #FEA116;
             --light: #F1F8FF;
             --dark: #0F172B;
         }
-
-       
 
         .navbar-dark .navbar-nav .nav-link {
             margin-left: 25px;
@@ -80,86 +78,77 @@
                 background: var(--dark) !important;
             }
         }
-        
-:root {
-    --primary: #FEA116;
-    --light: #F1F8FF;
-    --dark: #0F172B;
-}
 
-form {
-    background-color: var(--light);
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 80%;
-    max-width: 800px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
+        form {
+            background-color: var(--light);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
 
-label {
-    font-weight: bold;
-    color: var(--dark);
-    margin-bottom: 5px;
-}
+        label {
+            font-weight: bold;
+            color: var(--dark);
+            margin-bottom: 5px;
+        }
 
-input[type="text"],
-input[type="email"],
-input[type="datetime-local"],
-input[type="number"],
-textarea,
-select {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid var(--dark);
-    border-radius: 4px;
-    background-color: #fff;
-    font-size: 16px;
-    color: var(--dark);
-}
+        input[type="text"],
+        input[type="email"],
+        input[type="datetime-local"],
+        input[type="number"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid var(--dark);
+            border-radius: 4px;
+            background-color: #fff;
+            font-size: 16px;
+            color: var(--dark);
+        }
 
-input[type="radio"] {
-    margin-right: 10px;
-}
+        input[type="radio"] {
+            margin-right: 10px;
+        }
 
-input[type="submit"] {
-    background-color: var(--primary);
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    font-size: 18px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    width: 100%;
-    max-width: 200px;
-}
+        input[type="submit"] {
+            background-color: var(--primary);
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            width: 100%;
+            max-width: 200px;
+        }
 
-input[type="submit"]:hover {
-    background-color: var(--dark);
-}
+        input[type="submit"]:hover {
+            background-color: var(--dark);
+        }
 
-.hidden {
-    display: none;
-}
+        .hidden {
+            display: none;
+        }
 
-/* Adjusting the form layout for mobile devices */
-@media (max-width: 768px) {
-    form {
-        width: 100%;
-        padding: 15px;
-    }
+        @media (max-width: 768px) {
+            form {
+                width: 100%;
+                padding: 15px;
+            }
 
-    input[type="submit"] {
-        width: 100%;
-    }
-}
-
-
+            input[type="submit"] {
+                width: 100%;
+            }
+        }
     </style>
     <link href="/restaurant/customer/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.1.5/css/tempusdominus-bootstrap-4.min.css" />
@@ -167,11 +156,10 @@ input[type="submit"]:hover {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.1.5/js/tempusdominus-bootstrap-4.min.js"></script>
 </head>
 <body>
-    <%@ include file="header.jsp" %>
-
+   <%@ include file="header.jsp" %>   <%@ include file="header.jsp" %>
     <div class="container-xxl py-5 bg-dark hero-header mb-5">
         <div class="container text-center my-5 pt-5 pb-4">
-             <h1 class="display-3 text-white mb-3 animated slideInDown">Order Your Favourite</h1>
+            <h1 class="display-3 text-white mb-3 animated slideInDown">Order Your Favourite</h1>
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb justify-content-center text-uppercase">
                     <li class="breadcrumb-item"><a href="#">Home</a></li>
@@ -182,10 +170,11 @@ input[type="submit"]:hover {
         </div>
     </div>
 
- <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                    <h5 class="section-title ff-secondary text-center text-primary fw-normal">Order Food</h5>
-                    <h1 class="mb-5">Order</h1>
-                </div>
+    <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+        <h5 class="section-title ff-secondary text-center text-primary fw-normal">Order Food</h5>
+        <h1 class="mb-5">Order</h1>
+    </div>
+
     <%
         int id = Integer.parseInt(request.getParameter("id"));
         Connection conn = null;
@@ -216,6 +205,7 @@ input[type="submit"]:hover {
             if (conn != null) try { conn.close(); } catch (SQLException e) { e.printStackTrace(); }
         }
     %>
+
     <form action="http://localhost:8090/restaurant/OrderFoodServlet" method="post">
         <input type="hidden" name="foodId" value="<%= id %>">
         <input type="hidden" name="foodName" value="<%= name %>">
@@ -254,11 +244,11 @@ input[type="submit"]:hover {
                 <option value="dinner">Dinner</option>
             </select><br><br>
         </div>
+
         <div>
-    <label for="mealQuantity">Meal Quantity:</label>
-    <input type="number" id="mealQuantity" name="mealQuantity" value="1" min="1" required><br><br>
-</div>
-        
+            <label for="mealQuantity">Meal Quantity:</label>
+            <input type="number" id="mealQuantity" name="mealQuantity" value="1" min="1" required><br><br>
+        </div>
 
         <div id="customerDetails">
             <label for="customerName">Name:</label>
@@ -271,11 +261,10 @@ input[type="submit"]:hover {
             <input type="text" id="customerContact" name="customerContact" required><br><br>
         </div>
 
-        <input type="submit" value="Place Order" action="http://localhost:8090/restaurant/customer/jsp/orderConfirmation.jsp">
+        <input type="submit" value="Place Order">
     </form>
 
     <script>
-        // JavaScript to toggle visibility of dining time and online address inputs
         document.addEventListener('DOMContentLoaded', function() {
             var dineInDetails = document.getElementById('dineInDetails');
             var onlineDetails = document.getElementById('onlineDetails');
@@ -296,18 +285,15 @@ input[type="submit"]:hover {
             });
 
             // Set initial visibility
-            if (document.querySelector('input[name="orderType"]:checked').value === 'dineIn') {
+            var selectedOrderType = document.querySelector('input[name="orderType"]:checked').value;
+            if (selectedOrderType === 'dineIn') {
                 dineInDetails.classList.remove('hidden');
-                onlineDetails.classList.add('hidden');
-            } else if (document.querySelector('input[name="orderType"]:checked').value === 'online') {
-                dineInDetails.classList.add('hidden');
+            } else if (selectedOrderType === 'online') {
                 onlineDetails.classList.remove('hidden');
-            } else {
-                dineInDetails.classList.add('hidden');
-                onlineDetails.classList.add('hidden');
             }
         });
     </script>
-      <%@ include file="footer.jsp" %>
+
+    <%@ include file="footer.jsp" %>
 </body>
 </html>
