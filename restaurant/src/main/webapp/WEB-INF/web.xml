@@ -274,6 +274,30 @@
   	<description></description>
   	<servlet-class>com.JavaWebApplication.controller.staff.UpdateOrderServlet</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>AddFacilityServlet</servlet-name>
+  	<display-name>AddFacilityServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.JavaWebApplication.controller.AddFacilityServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>EditFacilityServlet</servlet-name>
+  	<display-name>EditFacilityServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.JavaWebApplication.controller.EditFacilityServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>DeleteFacilityServlet</servlet-name>
+  	<display-name>DeleteFacilityServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.JavaWebApplication.controller.DeleteFacilityServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>ManageFacilitiesServlet</servlet-name>
+  	<display-name>ManageFacilitiesServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.JavaWebApplication.controller.ManageFacilitiesServlet</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>Register</servlet-name>
   	<url-pattern>/Register</url-pattern>
@@ -453,5 +477,21 @@
   <servlet-mapping>
   	<servlet-name>3UpdateOrderServlet</servlet-name>
   	<url-pattern>/3UpdateOrderServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>AddFacilityServlet</servlet-name>
+  	<url-pattern>/AddFacilityServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>EditFacilityServlet</servlet-name>
+  	<url-pattern>/EditFacilityServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>DeleteFacilityServlet</servlet-name>
+  	<url-pattern>/DeleteFacilityServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ManageFacilitiesServlet</servlet-name>
+  	<url-pattern>/ManageFacilitiesServlet</url-pattern>
   </servlet-mapping>
 </web-app>

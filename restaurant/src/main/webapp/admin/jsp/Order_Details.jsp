@@ -5,14 +5,12 @@
 <head>
     <meta charset="UTF-8">
     <title>View Orders</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         .btn { padding: 5px 10px; border: none; cursor: pointer; }
         .btn-success { background-color: #28a745; color: #fff; }
         .btn-danger { background-color: #dc3545; color: #fff; }
         .btn-warning { background-color: #ffc107; color: #000; }
         .btn-primary { background-color: #007bff; color: #fff; }
-        .icon { font-size: 16px; }
     </style>
 </head>
 <body>
@@ -20,7 +18,7 @@
 <h2>Orders</h2>
 
 <!-- Search Form -->
-<form action="vieworder.jsp" method="get">
+<form action="Order_Details.jsp" method="get">
     <label for="searchName">Customer Name:</label>
     <input type="text" id="searchName" name="customer_name" value="<%= request.getParameter("customer_name") != null ? request.getParameter("customer_name") : "" %>">
     
@@ -56,7 +54,6 @@
         <th>Order Date</th>
         <th>Quantity</th>
         <th>Total Price</th>
-        <th>Action</th>
         <th>Status</th>
     </tr>
 
@@ -116,27 +113,7 @@
         <td><%= rs.getTimestamp("order_date") != null ? rs.getTimestamp("order_date").toString() : "N/A" %></td>
         <td><%= rs.getInt("meal_quantity") %></td>
         <td><%= rs.getBigDecimal("total_price") %></td>
-        <td>
-            <form action="http://localhost:8090/restaurant/EditOrderServlet" method="post" style="display:inline;">
-                <input type="hidden" name="order_id" value="<%= rs.getInt("id") %>">
-                <button type="submit" class="btn btn-primary"><i class="fas fa-edit icon"></i></button>
-            </form>
-            
-            <form action="http://localhost:8090/restaurant/ConfirmOrderServlet" method="post" style="display:inline;">
-                <input type="hidden" name="order_id" value="<%= rs.getInt("id") %>">
-                <button type="submit" class="btn btn-success"><i class="fas fa-check icon"></i></button>
-            </form>
-            
-            <form action="http://localhost:8090/restaurant/CancelOrderServlet" method="post" style="display:inline;">
-                <input type="hidden" name="order_id" value="<%= rs.getInt("id") %>">
-                <button type="submit" class="btn btn-danger"><i class="fas fa-times icon"></i></button>
-            </form>
-            
-            <form action="http://localhost:8090/restaurant/PendingOrderServlet" method="post" style="display:inline;">
-                <input type="hidden" name="order_id" value="<%= rs.getInt("id") %>">
-                <button type="submit" class="btn btn-warning"><i class="fas fa-hourglass-half icon"></i></button>
-            </form>
-        </td>
+        
         <td><%= rs.getString("action") %></td>
     </tr>
     <%

@@ -91,24 +91,6 @@
             font-size: 14px;
         }
     }
-    /* Page header styling */
-.page-header {
-    background-color: #ffffff; /* White background for the header */
-    padding: 20px; /* Padding inside the header */
-    border-bottom: 1px solid #ddd; /* Light border at the bottom */
-    margin-bottom: 20px; /* Space below the header */
-}
-
-.page-header h1 {
-    margin: 0; /* Remove default margin */
-    font-size: 1.5rem; /* Larger font size for the title */
-    color: #333; /* Dark gray color */
-}
-
-.page-header small {
-    color: #888; /* Light gray color for the breadcrumb */
-}
-    
 
     .search-form {
         display: flex; /* Use flexbox to align items horizontally */
@@ -220,10 +202,10 @@
 </head>
 <body>
     <%@ include file="adminheader.jsp" %>
-  <div class="page-header">
-                <h1>Manage Food Item</h1>
-                <small>Home / Manage Customers</small>
-            </div>
+    <div class="page-header">
+        <h1>Manage Food Item</h1>
+        <small>Home / Manage Customers</small>
+    </div>
     <form action="http://localhost:8090/restaurant/AddFoodItemServlet" method="post" enctype="multipart/form-data">
         <input type="text" name="name" placeholder="Food Name" required><br><br>
         <textarea name="description" placeholder="Description" required></textarea><br><br>
@@ -306,11 +288,11 @@
             <td>
                 <form action="http://localhost:8090/restaurant/admin/jsp/EditFoodItem.jsp" method="get" style="display:inline;">
                     <input type="hidden" name="id" value="<%= rs.getInt("id") %>">
-                    <input type="submit" value="Edit" class="edit-button">
+                    <button type="submit" class="edit-button"><i class="las la-edit"></i></button>
                 </form>
                 <form action="http://localhost:8090/restaurant/DeleteFoodItemServlet" method="post" style="display:inline;" onsubmit="return confirmDelete();">
                     <input type="hidden" name="id" value="<%= rs.getInt("id") %>">
-                    <input type="submit" value="Delete" class="delete-button">
+                    <button type="submit" class="delete-button"><i class="las la-trash"></i></button>
                 </form>
             </td>
         </tr>

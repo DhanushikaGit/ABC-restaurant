@@ -5,12 +5,14 @@
 <head>
     <meta charset="UTF-8">
     <title>View Reservations</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        .btn { padding: 5px 10px; border: none; cursor: pointer; }
+        .btn { padding: 5px 10px; border: none; cursor: pointer; font-size: 16px; }
         .btn-success { background-color: #28a745; color: #fff; }
         .btn-danger { background-color: #dc3545; color: #fff; }
         .btn-warning { background-color: #ffc107; color: #000; }
         .btn-primary { background-color: #007bff; color: #fff; }
+        .icon { font-size: 16px; }
     </style>
 </head>
 <body>
@@ -95,19 +97,19 @@
         <td>
             <form action="http://localhost:8090/restaurant/ConfirmReservationServletstaff" method="post" style="display:inline;">
                 <input type="hidden" name="reservation_id" value="<%= rs.getInt("id") %>">
-                <input type="submit" value="Confirm" class="btn btn-success">
+                <button type="submit" class="btn btn-success"><i class="fas fa-check icon"></i></button>
             </form>
             <form action="http://localhost:8090/restaurant/CancelReservationServlet" method="post" style="display:inline;">
                 <input type="hidden" name="reservation_id" value="<%= rs.getInt("id") %>">
-                <input type="submit" value="Cancel" class="btn btn-danger">
+                <button type="submit" class="btn btn-danger"><i class="fas fa-times icon"></i></button>
             </form>
             <form action="http://localhost:8090/restaurant/EditReservationServlet" method="post" style="display:inline;">
                 <input type="hidden" name="reservation_id" value="<%= rs.getInt("id") %>">
-                <input type="submit" value="Edit" class="btn btn-primary">
+                <button type="submit" class="btn btn-primary"><i class="fas fa-edit icon"></i></button>
             </form>
             <form action="http://localhost:8090/restaurant/PendingReservationServlet" method="post" style="display:inline;">
                 <input type="hidden" name="reservation_id" value="<%= rs.getInt("id") %>">
-                <input type="submit" value="Pending" class="btn btn-warning">
+                <button type="submit" class="btn btn-warning"><i class="fas fa-hourglass-half icon"></i></button>
             </form>
         </td>
     </tr>
