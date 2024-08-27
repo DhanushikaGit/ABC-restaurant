@@ -10,7 +10,7 @@
 
 <h2>Edit Order</h2>
 
-<form action="http://localhost:8090/restaurant/staff/jsp/EditOrder.jsp" method="post">
+<form action="http://localhost:8090/restaurant/UpdateOrderServlet2" method="post">
     <input type="hidden" name="order_id" value="<%= request.getAttribute("order_id") %>">
     
     <label for="food_name">Food Name:</label>
@@ -68,6 +68,7 @@
     <button type="submit">Update</button>
     <a href="/restaurant/staff/jsp/vieworder.jsp">Cancel</a>
 </form>
+
 
 </body>
 </html>

@@ -262,6 +262,18 @@
   	<description></description>
   	<servlet-class>com.JavaWebApplication.controller.staff.EditOrderServlet</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>2UpdateOrderServlet</servlet-name>
+  	<display-name>2UpdateOrderServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.JavaWebApplication.controller.staff.UpdateOrderServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>3UpdateOrderServlet</servlet-name>
+  	<display-name>3UpdateOrderServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.JavaWebApplication.controller.staff.UpdateOrderServlet</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>Register</servlet-name>
   	<url-pattern>/Register</url-pattern>
@@ -433,5 +445,13 @@
   <servlet-mapping>
   	<servlet-name>2EditOrderServlet</servlet-name>
   	<url-pattern>/2EditOrderServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>2UpdateOrderServlet</servlet-name>
+  	<url-pattern>/2UpdateOrderServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>3UpdateOrderServlet</servlet-name>
+  	<url-pattern>/3UpdateOrderServlet</url-pattern>
   </servlet-mapping>
 </web-app>

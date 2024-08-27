@@ -88,30 +88,33 @@
         <td><%= rs.getString("food_name") %></td>
         <td><%= rs.getBigDecimal("food_price") %></td>
         <td><%= rs.getString("order_type") %></td>
-        <td><%= rs.getTimestamp("dine_in_time") %></td>
-        <td><%= rs.getString("delivery_address") %></td>
+        <td><%= rs.getTimestamp("dine_in_time") != null ? rs.getTimestamp("dine_in_time").toString() : "N/A" %></td>
+        <td><%= rs.getString("delivery_address") != null ? rs.getString("delivery_address") : "N/A" %></td>
         <td><%= rs.getString("meal_size") %></td>
         <td><%= rs.getString("meal_type") %></td>
         <td><%= rs.getString("customer_name") %></td>
         <td><%= rs.getString("customer_email") %></td>
         <td><%= rs.getString("customer_contact") %></td>
-        <td><%= rs.getTimestamp("order_date") %></td>
+        <td><%= rs.getTimestamp("order_date") != null ? rs.getTimestamp("order_date").toString() : "N/A" %></td>
         <td><%= rs.getInt("meal_quantity") %></td>
         <td><%= rs.getBigDecimal("total_price") %></td>
         <td>
-            <form action="http://localhost:8090/restaurant/staff/jsp/EditOrder.jsp" method="get" style="display:inline;">
+            <form action="http://localhost:8090/restaurant/EditOrderServlet" method="post" style="display:inline;">
                 <input type="hidden" name="order_id" value="<%= rs.getInt("id") %>">
                 <input type="submit" value="Edit" class="btn btn-primary">
             </form>
-            <form action="http://localhost:8090/restaurant/ConfirmOrderServlet" method="post" style="display:inline;">
+            
+            <form action="ConfirmOrderServlet" method="post" style="display:inline;">
                 <input type="hidden" name="order_id" value="<%= rs.getInt("id") %>">
                 <input type="submit" value="Confirm" class="btn btn-success">
             </form>
-            <form action="http://localhost:8090/restaurant/CancelOrderServlet" method="post" style="display:inline;">
+            
+            <form action="CancelOrderServlet" method="post" style="display:inline;">
                 <input type="hidden" name="order_id" value="<%= rs.getInt("id") %>">
                 <input type="submit" value="Cancel" class="btn btn-danger">
             </form>
-            <form action="http://localhost:8090/restaurant/PendingOrderServlet" method="post" style="display:inline;">
+            
+            <form action="PendingOrderServlet" method="post" style="display:inline;">
                 <input type="hidden" name="order_id" value="<%= rs.getInt("id") %>">
                 <input type="submit" value="Pending" class="btn btn-warning">
             </form>
