@@ -298,6 +298,30 @@
   	<description></description>
   	<servlet-class>com.JavaWebApplication.controller.ManageFacilitiesServlet</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>2AddFacilityServlet</servlet-name>
+  	<display-name>2AddFacilityServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.JavaWebApplication.controller.AddFacilityServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>EditFacilityServlet2</servlet-name>
+  	<display-name>EditFacilityServlet2</display-name>
+  	<description></description>
+  	<servlet-class>com.JavaWebApplication.controller.EditFacilityServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>DeleteFacilityServlet2</servlet-name>
+  	<display-name>DeleteFacilityServlet2</display-name>
+  	<description></description>
+  	<servlet-class>com.JavaWebApplication.controller.DeleteFacilityServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>UpdateFacilityServlet</servlet-name>
+  	<display-name>UpdateFacilityServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.JavaWebApplication.controller.UpdateFacilityServlet</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>Register</servlet-name>
   	<url-pattern>/Register</url-pattern>
@@ -493,5 +517,21 @@
   <servlet-mapping>
   	<servlet-name>ManageFacilitiesServlet</servlet-name>
   	<url-pattern>/ManageFacilitiesServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>2AddFacilityServlet</servlet-name>
+  	<url-pattern>/2AddFacilityServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>EditFacilityServlet2</servlet-name>
+  	<url-pattern>/EditFacilityServlet2</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>DeleteFacilityServlet2</servlet-name>
+  	<url-pattern>/DeleteFacilityServlet2</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>UpdateFacilityServlet</servlet-name>
+  	<url-pattern>/UpdateFacilityServlet</url-pattern>
   </servlet-mapping>
 </web-app>
