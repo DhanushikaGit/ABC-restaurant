@@ -322,6 +322,30 @@
   	<description></description>
   	<servlet-class>com.JavaWebApplication.controller.UpdateFacilityServlet</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>AddServiceServlet</servlet-name>
+  	<display-name>AddServiceServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.JavaWebApplication.controller.AddServiceServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>EditServiceServlet</servlet-name>
+  	<display-name>EditServiceServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.JavaWebApplication.controller.EditServiceServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>DeleteServiceServlet</servlet-name>
+  	<display-name>DeleteServiceServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.JavaWebApplication.controller.DeleteServiceServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>UpdateServiceServlet</servlet-name>
+  	<display-name>UpdateServiceServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.JavaWebApplication.controller.UpdateServiceServlet</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>Register</servlet-name>
   	<url-pattern>/Register</url-pattern>
@@ -533,5 +557,21 @@
   <servlet-mapping>
   	<servlet-name>UpdateFacilityServlet</servlet-name>
   	<url-pattern>/UpdateFacilityServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>AddServiceServlet</servlet-name>
+  	<url-pattern>/AddServiceServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>EditServiceServlet</servlet-name>
+  	<url-pattern>/EditServiceServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>DeleteServiceServlet</servlet-name>
+  	<url-pattern>/DeleteServiceServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>UpdateServiceServlet</servlet-name>
+  	<url-pattern>/UpdateServiceServlet</url-pattern>
   </servlet-mapping>
 </web-app>
