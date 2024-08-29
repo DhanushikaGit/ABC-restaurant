@@ -376,6 +376,18 @@
   	<description></description>
   	<servlet-class>com.JavaWebApplication.controller.SubmitFeedbackServlet</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>DeleteFeedbackServlet</servlet-name>
+  	<display-name>DeleteFeedbackServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.JavaWebApplication.controller.DeleteFeedbackServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>staffLoginServlet</servlet-name>
+  	<display-name>staffLoginServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.JavaWebApplication.controller.staff.LoginServlet</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>Register</servlet-name>
   	<url-pattern>/Register</url-pattern>
@@ -623,5 +635,13 @@
   <servlet-mapping>
   	<servlet-name>SubmitFeedbackServlet</servlet-name>
   	<url-pattern>/SubmitFeedbackServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>DeleteFeedbackServlet</servlet-name>
+  	<url-pattern>/DeleteFeedbackServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>staffLoginServlet</servlet-name>
+  	<url-pattern>/staffLoginServlet</url-pattern>
   </servlet-mapping>
 </web-app>

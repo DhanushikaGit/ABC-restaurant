@@ -52,14 +52,14 @@
                 <div class="navbar-nav ms-auto py-0 pe-4">
                     <a href="/restaurant/customer/jsp/index.jsp" class="nav-item nav-link">Home</a>
                     <a href="/restaurant/customer/jsp/about.jsp" class="nav-item nav-link">About</a>
-                    <a href="/restaurant/customer/jsp/service.jsp" class="nav-item nav-link">Service</a>
+                    <a href="/restaurant/customer/jsp/ViewServices.jsp" class="nav-item nav-link">Service</a>
                     <a href="menu.jsp" class="nav-item nav-link">Menu</a>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Pages</a>
                         <div class="dropdown-menu m-0">
                             <a href="/restaurant/customer/jsp/reservation.jsp" class="dropdown-item">Booking</a>
                             <a href="/restaurant/customer/jsp/team.jsp" class="dropdown-item">Our Team</a>
-                            <a href="testimonial.jsp" class="dropdown-item">Feedback</a>
+                            <a href="/restaurant/customer/jsp/viewFeedback.jsp" class="dropdown-item">Feedback</a>
                         </div>
                     </div>
                     <a href="/restaurant/customer/jsp/Contact.jsp" class="nav-item nav-link">Contact</a>
