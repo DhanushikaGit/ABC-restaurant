@@ -90,38 +90,41 @@
         <h1>Edit Gallery Item</h1>
         <small>Home / Edit Gallery</small>
     </div>
-    <%
-        int id = Integer.parseInt(request.getParameter("id"));
-        Connection conn = null;
-        PreparedStatement pstmt = null;
-        ResultSet rs = null;
+   <%
+    int id = Integer.parseInt(request.getParameter("id"));
+    Connection conn = null;
+    PreparedStatement pstmt = null;
+    ResultSet rs = null;
 
-        String title = "";
-        String description = "";
-        String image = "";
+    String title = "";
+    String description = "";
+    String image = "";
+    String category = "";  // Added this line to store the category
 
-        try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/restaurant", "root", "1234");
+    try {
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/restaurant", "root", "1234");
 
-            String sql = "SELECT title, description, image FROM gallery WHERE id = ?";
-            pstmt = conn.prepareStatement(sql);
-            pstmt.setInt(1, id);
-            rs = pstmt.executeQuery();
-            if (rs.next()) {
-                title = rs.getString("title");
-                description = rs.getString("description");
-                image = rs.getString("image");
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            if (rs != null) try { rs.close(); } catch (SQLException e) { e.printStackTrace(); }
-            if (pstmt != null) try { pstmt.close(); } catch (SQLException e) { e.printStackTrace(); }
-            if (conn != null) try { conn.close(); } catch (SQLException e) { e.printStackTrace(); }
+        String sql = "SELECT title, description, image, category FROM gallery WHERE id = ?";
+        pstmt = conn.prepareStatement(sql);
+        pstmt.setInt(1, id);
+        rs = pstmt.executeQuery();
+        if (rs.next()) {
+            title = rs.getString("title");
+            description = rs.getString("description");
+            image = rs.getString("image");
+            category = rs.getString("category");  // Added this line to populate the category variable
         }
-    %>
- <form action="<%= request.getContextPath() %>/EditGalleryServlet" method="post" enctype="multipart/form-data">
+    } catch (Exception e) {
+        e.printStackTrace();
+    } finally {
+        if (rs != null) try { rs.close(); } catch (SQLException e) { e.printStackTrace(); }
+        if (pstmt != null) try { pstmt.close(); } catch (SQLException e) { e.printStackTrace(); }
+        if (conn != null) try { conn.close(); } catch (SQLException e) { e.printStackTrace(); }
+    }
+%>
+
+<form action="<%= request.getContextPath() %>/EditGalleryServlet" method="post" enctype="multipart/form-data">
     <input type="hidden" name="id" value="<%= id %>">
     <input type="text" name="title" value="<%= title %>" placeholder="Title" required><br><br>
     <textarea name="description" placeholder="Description" required><%= description %></textarea><br><br>
@@ -140,5 +143,6 @@
     <input type="file" name="image" accept="image/*"><br><br>
     <input type="submit" value="Update Gallery Item">
 </form>
+   
  
 </html>
