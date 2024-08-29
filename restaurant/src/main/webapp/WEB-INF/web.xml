@@ -370,6 +370,12 @@
   	<description></description>
   	<servlet-class>com.JavaWebApplication.controller.DeleteGalleryServlet</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>SubmitFeedbackServlet</servlet-name>
+  	<display-name>SubmitFeedbackServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.JavaWebApplication.controller.SubmitFeedbackServlet</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>Register</servlet-name>
   	<url-pattern>/Register</url-pattern>
@@ -613,5 +619,9 @@
   <servlet-mapping>
   	<servlet-name>DeleteGalleryServlet</servlet-name>
   	<url-pattern>/DeleteGalleryServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>SubmitFeedbackServlet</servlet-name>
+  	<url-pattern>/SubmitFeedbackServlet</url-pattern>
   </servlet-mapping>
 </web-app>
