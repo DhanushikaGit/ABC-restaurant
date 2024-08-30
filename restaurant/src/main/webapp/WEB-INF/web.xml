@@ -388,6 +388,18 @@
   	<description></description>
   	<servlet-class>com.JavaWebApplication.controller.staff.LoginServlet</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>AddToCartServlet</servlet-name>
+  	<display-name>AddToCartServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.JavaWebApplication.controller.AddToCartServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>CheckoutServlet</servlet-name>
+  	<display-name>CheckoutServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.JavaWebApplication.controller.CheckoutServlet</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>Register</servlet-name>
   	<url-pattern>/Register</url-pattern>
@@ -643,5 +655,13 @@
   <servlet-mapping>
   	<servlet-name>staffLoginServlet</servlet-name>
   	<url-pattern>/staffLoginServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>AddToCartServlet</servlet-name>
+  	<url-pattern>/AddToCartServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>CheckoutServlet</servlet-name>
+  	<url-pattern>/CheckoutServlet</url-pattern>
   </servlet-mapping>
 </web-app>
