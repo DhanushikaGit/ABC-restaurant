@@ -70,6 +70,7 @@
             align-items: center;
             padding: 2rem;
             gap: 2rem;
+            flex-wrap: wrap;
         }
 
         .search-container {
@@ -114,23 +115,32 @@
 
         .food-images {
             display: flex;
-            flex-direction: column;
-            gap: 2rem;
-            align-items: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            justify-content: center;
         }
 
-        .food-images img {
+        .food-images .food-item {
             border-radius: 50%;
+            overflow: hidden;
             box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
-            transform: rotate(-6deg);
+            width: 150px;
+            height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             transition: transform 0.3s ease-in-out;
-            width: 100%;
-            max-width: 400px;
-            height: auto;
         }
 
-        .food-images img:hover {
-            transform: rotate(0);
+        .food-images .food-item img {
+            border-radius: 50%;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .food-images .food-item:hover {
+            transform: scale(1.1);
         }
     </style>
     <script>
@@ -166,9 +176,15 @@
             <button onclick="searchLocation()">Search</button>
         </div>
         <div class="food-images">
-            <img src="/restaurant/customer/images/menu-1.jpg" alt="Food1">
-            <img src="/restaurant/customer/images/menu-2.jpg" alt="Food2">
-            <img src="/restaurant/customer/images/menu-3.jpg" alt="Food3">
+            <div class="food-item">
+                <img src="/restaurant/customer/images/menu-1.jpg" alt="Food1">
+            </div>
+            <div class="food-item">
+                <img src="/restaurant/customer/images/menu-2.jpg" alt="Food2">
+            </div>
+            <div class="food-item">
+                <img src="/restaurant/customer/images/menu-3.jpg" alt="Food3">
+            </div>
         </div>
     </main>
 </body>

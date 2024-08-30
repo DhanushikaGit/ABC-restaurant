@@ -5,7 +5,6 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.http.HttpServlet;
@@ -61,6 +60,6 @@ public class EditServiceServlet extends HttpServlet {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        response.sendRedirect(request.getContextPath() + "/admin/jsp/manageServices.jsp");
+        response.sendRedirect(request.getContextPath() + "/admin/jsp/manageServices.jsp?status=editSuccess");
     }
 }

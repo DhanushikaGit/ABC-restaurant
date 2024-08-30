@@ -27,6 +27,6 @@ public class DeleteServiceServlet extends HttpServlet {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        response.sendRedirect(request.getContextPath() + "/admin/jsp/manageServices.jsp");
+        response.sendRedirect(request.getContextPath() + "/admin/jsp/manageServices.jsp?status=deleteSuccess");
     }
 }

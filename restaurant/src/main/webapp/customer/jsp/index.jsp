@@ -53,8 +53,8 @@
                     <div class="row align-items-center g-5">
                         <div class="col-lg-6 text-center text-lg-start">
                             <h1 class="display-3 text-white animated slideInLeft">Enjoy Our<br>Delicious Meal</h1>
-                            <p class="text-white animated slideInLeft mb-4 pb-2">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet</p>
-                            <a href="/restaurant/src/main/webapp/customer/jsp/food.jsp" class="btn btn-primary py-sm-3 px-sm-5 me-3 animated slideInLeft">Order Your Favourite Dish</a>
+                            <p class="text-white animated slideInLeft mb-4 pb-2">Welcome to ABC Restaurant, your premier dining destination across Sri Lanka!</p>
+                            <a href="/restaurant/src/main/webapp/customer/jsp/food.jsp" class="btn btn-primary py-sm-3 px-sm-5 me-3 animated slideInLeft">Order Your favourite </a>
                         </div>
                         <div class="col-lg-6 text-center text-lg-end overflow-hidden">
                             <img class="img-fluid" src="/restaurant/customer/images/hero.png" alt="">
@@ -194,7 +194,7 @@
                             <div class="p-4">
                                 <i class="fa fa-3x fa-user-tie text-primary mb-4"></i>
                                 <h5>Master Chefs</h5>
-                                <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
+                                <p>Our team of expert chefs brings you a delightful blend of traditional and contemporary dishes crafted with passion and expertise.</p>
                             </div>
                         </div>
                     </div>
@@ -203,7 +203,7 @@
                             <div class="p-4">
                                 <i class="fa fa-3x fa-utensils text-primary mb-4"></i>
                                 <h5>Quality Food</h5>
-                                <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
+                                <p>Enjoy our exquisite gourmet cuisine prepared with the finest ingredients, ensuring a memorable dining experience every time.</p>
                             </div>
                         </div>
                     </div>
@@ -212,7 +212,7 @@
                             <div class="p-4">
                                 <i class="fa fa-3x fa-cart-plus text-primary mb-4"></i>
                                 <h5>Online Order</h5>
-                                <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
+                                <p>Place your orders easily online and have your favorite dishes delivered to your doorstep with just a few clicks.</p>
                             </div>
                         </div>
                     </div>
@@ -221,7 +221,7 @@
                             <div class="p-4">
                                 <i class="fa fa-3x fa-headset text-primary mb-4"></i>
                                 <h5>24/7 Service</h5>
-                                <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
+                                <p>We offer round-the-clock customer support to assist you with reservations, queries, and any other needs you may have.</p>
                             </div>
                         </div>
                     </div>

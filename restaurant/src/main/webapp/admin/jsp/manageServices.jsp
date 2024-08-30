@@ -141,6 +141,18 @@
         function confirmDelete() {
             return confirm('Are you sure you want to delete this service?');
         }
+       
+
+        window.onload = function() {
+            var urlParams = new URLSearchParams(window.location.search);
+            var status = urlParams.get('status');
+
+            if (status === 'editSuccess') {
+                alert('Service has been successfully edited.');
+            } else if (status === 'deleteSuccess') {
+                alert('Service has been successfully deleted.');
+            }
+        };
     </script>
 </head>
 <body>
@@ -234,14 +246,14 @@
             </td>
         </tr>
         <%
-                }
-            } catch (Exception e) {
-                out.println("<tr><td colspan='6'>Error: " + e.getMessage() + "</td></tr>");
-            } finally {
-                if (rs != null) try { rs.close(); } catch (SQLException e) { e.printStackTrace(); }
-                if (pstmt != null) try { pstmt.close(); } catch (SQLException e) { e.printStackTrace(); }
-                if (conn != null) try { conn.close(); } catch (SQLException e) { e.printStackTrace(); }
             }
+        } catch (Exception e) {
+            out.println("<tr><td colspan='6'>Error: " + e.getMessage() + "</td></tr>");
+        } finally {
+            if (rs != null) try { rs.close(); } catch (SQLException e) { e.printStackTrace(); }
+            if (pstmt != null) try { pstmt.close(); } catch (SQLException e) { e.printStackTrace(); }
+            if (conn != null) try { conn.close(); } catch (SQLException e) { e.printStackTrace(); }
+        }
         %>
     </table>
 </body>

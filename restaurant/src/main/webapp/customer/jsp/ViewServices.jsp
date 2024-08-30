@@ -6,8 +6,10 @@
     <meta charset="UTF-8">
     <title>View Services</title>
     <link href="/restaurant/customer/images/A B C (1).png" rel="icon">
+
+    <!-- Template Stylesheet -->
+    <link href="/restaurant/customer/css/index.css" rel="stylesheet">
     
-    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
     <style>
         :root {
             --primary: #FEA116;
@@ -201,7 +203,7 @@
 
     <div class="container-xxl py-5 bg-dark hero-header mb-5">
         <div class="container text-center my-5 pt-5 pb-4">
-            <h1 class="display-3 text-white mb-3 animated slideInDown">View Our Services</h1>
+            <h1 class="display-3 text-white mb-3 animated slideInDown">service offered by ABC Restaurant</h1>
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb justify-content-center text-uppercase">
                     <li class="breadcrumb-item"><a href="#">Home</a></li>
@@ -227,6 +229,49 @@
         <h5 class="section-title ff-secondary text-center text-primary fw-normal">Our Main Services</h5>
         <h1 class="mb-5">Services</h1>
     </div>
+    
+     <div class="container-xxl py-5">
+            <div class="container">
+                <div class="row g-4">
+                    <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="service-item rounded pt-3">
+                            <div class="p-4">
+                                <i class="fa fa-3x fa-user-tie text-primary mb-4"></i>
+                                <h5>Master Chefs</h5>
+                                <p>Our team of expert chefs brings you a delightful blend of traditional and contemporary dishes crafted with passion and expertise.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="service-item rounded pt-3">
+                            <div class="p-4">
+                                <i class="fa fa-3x fa-utensils text-primary mb-4"></i>
+                                <h5>Quality Food</h5>
+                                <p>Enjoy our exquisite gourmet cuisine prepared with the finest ingredients, ensuring a memorable dining experience every time.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
+                        <div class="service-item rounded pt-3">
+                            <div class="p-4">
+                                <i class="fa fa-3x fa-cart-plus text-primary mb-4"></i>
+                                <h5>Online Order</h5>
+                                <p>Place your orders easily online and have your favorite dishes delivered to your doorstep with just a few clicks.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
+                        <div class="service-item rounded pt-3">
+                            <div class="p-4">
+                                <i class="fa fa-3x fa-headset text-primary mb-4"></i>
+                                <h5>24/7 Service</h5>
+                                <p>We offer round-the-clock customer support to assist you with reservations, queries, and any other needs you may have.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
     <div class="menu-grid">
         <%
@@ -262,7 +307,7 @@
                 <div class="menu-item-name"><%= name %></div>
                 <div class="menu-item-description"><%= description %></div>
                 <div class="menu-item-price"><%= status %></div>
-                <button class="order-button">Book Now</button>
+              
             </div>
         </div>
         <%
