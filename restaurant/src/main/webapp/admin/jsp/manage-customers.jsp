@@ -9,10 +9,19 @@
     <link rel="stylesheet" href="/restaurant/admin/css/admin.css">
      <link href="/restaurant/customer/images/A B C (1).png" rel="icon">
     <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
-    <script>
+   <script>
         function confirmDelete() {
             return confirm('Are you sure you want to delete this record?');
         }
+
+        // Show alert based on the session message
+        window.onload = function() {
+            const message = "<%= session.getAttribute("message") %>";
+            if (message) {
+                alert(message);
+                session.removeAttribute("message"); // Clear the message after showing it
+            }
+        };
     </script>
     <style>
     /* General body styles */
