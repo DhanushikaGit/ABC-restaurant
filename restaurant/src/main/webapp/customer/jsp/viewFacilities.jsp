@@ -4,7 +4,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>View Facilities</title>
+    <title>Our Facilities</title>
     <link href="/restaurant/customer/images/A B C (1).png" rel="icon">
         <link href="/restaurant/customer/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
@@ -262,7 +262,7 @@
                 <div class="menu-item-name"><%= name %></div>
                 <div class="menu-item-description"><%= description %></div>
                 <div class="menu-item-price"><%= status %></div>
-                <button class="order-button">Order Now</button>
+            
             </div>
         </div>
         <%
