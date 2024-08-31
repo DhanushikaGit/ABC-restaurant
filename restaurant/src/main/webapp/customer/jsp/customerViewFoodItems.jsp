@@ -8,6 +8,77 @@
     <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
     <style>
         /* Add your styles here */
+        
+        
+        
+/*** Navbar ***/
+.navbar-dark .navbar-nav .nav-link {
+   
+    margin-left: 25px;
+    padding: 35px 0;
+    font-size: 15px;
+    color: var(--light) !important;
+    text-transform: uppercase;
+    font-weight: 500;
+    outline: none;
+    transition: .5s;
+}
+
+.sticky-top.navbar-dark .navbar-nav .nav-link {
+    padding: 20px 0;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover,
+.navbar-dark .navbar-nav .nav-link.active {
+    color: var(--primary) !important;
+}
+
+.navbar-dark .navbar-brand img {
+    max-height: 60px;
+    transition: .5s;
+}
+
+.sticky-top.navbar-dark .navbar-brand img {
+    max-height: 45px;
+}
+
+@media (max-width: 991.98px) {
+    .sticky-top.navbar-dark {
+        position: relative;
+    }
+
+    .navbar-dark .navbar-collapse {
+        margin-top: 15px;
+        border-top: 1px solid rgba(255, 255, 255, .1)
+    }
+
+    .navbar-dark .navbar-nav .nav-link,
+    .sticky-top.navbar-dark .navbar-nav .nav-link {
+        padding: 10px 0;
+        margin-left: 0;
+    }
+
+    .navbar-dark .navbar-brand img {
+        max-height: 45px;
+    }
+}
+
+@media (min-width: 992px) {
+    .navbar-dark {
+        position: absolute;
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: 999;
+        background: transparent !important;
+    }
+    
+    .sticky-top.navbar-dark {
+        position: fixed;
+        background: var(--dark) !important;
+    }
+}
+        
         body {
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
@@ -85,9 +156,95 @@
         .menu-item-actions button:hover {
             background-color: #e68900;
         }
+          :root {
+            --primary: #FEA116;
+            --light: #F1F8FF;
+            --dark: #0F172B;
+        }
+
+       
+
+        h2 {
+            color: var(--primary);
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .search-bar {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .search-input, .category-select, .search-button {
+            padding: 10px;
+            margin-right: 10px;
+            border: 1px solid var(--dark);
+            border-radius: 5px;
+        }
+
+        .search-button {
+            background-color: var(--primary);
+            color: var(--light);
+            cursor: pointer;
+        }
+
+        .search-button:hover {
+            background-color: var(--dark);
+            color: var(--light);
+        }
+        
     </style>
+     
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <link href="/restaurant/customer/images/A B C (1).png" rel="icon">
+
+  
+    
+     <!-- Customized Bootstrap Stylesheet -->
+    <link href="/restaurant/customer/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.1.5/css/tempusdominus-bootstrap-4.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.1.5/js/tempusdominus-bootstrap-4.min.js"></script>
 </head>
 <body>
+
+
+
+       <%@ include file="header.jsp" %>
+    <div class="container-xxl py-5 bg-dark hero-header mb-5">
+                <div class="container text-center my-5 pt-5 pb-4">
+                    <h1 class="display-3 text-white mb-3 animated slideInDown">Order Your Favorites</h1>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb justify-content-center text-uppercase">
+                            <li class="breadcrumb-item"><a href="#">Home</a></li>
+                            <li class="breadcrumb-item"><a href="#">Pages</a></li>
+                            <li class="breadcrumb-item text-white active" aria-current="page">Our Food Menu</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+     <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                    <h5 class="section-title ff-secondary text-center text-primary fw-normal">Our Menu</h5>
+                    <h1 class="mb-5">Order Your Favorite Dish</h1>
+                </div>
+
+    <form action="" method="get" class="search-bar">
+        <input type="text" name="query" class="search-input" placeholder="Search by name or price..." value="<%= request.getParameter("query") != null ? request.getParameter("query") : "" %>">
+        <select name="category" class="category-select">
+            <option value="">All Categories</option>
+            <option value="Vegetables" <%= "Vegetables".equals(request.getParameter("category")) ? "selected" : "" %>>Vegetables</option>
+            <option value="Non-Vegetables" <%= "Non-Vegetables".equals(request.getParameter("category")) ? "selected" : "" %>>Non-Vegetables</option>
+            <option value="Beverages" <%= "Beverages".equals(request.getParameter("category")) ? "selected" : "" %>>Beverages</option>
+            <option value="Unique Dishes" <%= "Unique Dishes".equals(request.getParameter("category")) ? "selected" : "" %>>Unique Dishes</option>
+        </select>
+        <input type="submit" value="Search" class="search-button">
+    </form>
+    
     <div class="menu-container">
         <h1>Our Menu</h1>
         <%
@@ -116,7 +273,7 @@
                 $<%= rs.getBigDecimal("price") %>
             </div>
             <div class="menu-item-actions">
-                <form action="http://localhost:8090/restaurant/AddToCartServlet" method="post">
+                <form action="<%= request.getContextPath() + "/AddToCartServlet" %>" method="post">
                     <input type="hidden" name="id" value="<%= rs.getInt("id") %>">
                     <select name="quantity">
                         <option value="1">1</option>
