@@ -3,6 +3,12 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link href="/restaurant/customer/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="/restaurant/customer/css/index.css" rel="stylesheet">
+     <link href="/restaurant/customer/images/A B C (1).png" rel="icon">
+    <meta charset="UTF-8">
     <meta charset="UTF-8">
     <title>Checkout</title>
     <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
@@ -97,8 +103,27 @@
     </style>
 </head>
 <body>
+
+
+<%@ include file="header.jsp" %>
+    <div class="container-xxl py-5 bg-dark hero-header mb-5">
+                <div class="container text-center my-5 pt-5 pb-4">
+                    <h1 class="display-3 text-white mb-3 animated slideInDown">Check Out Your Order</h1>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb justify-content-center text-uppercase">
+                            <li class="breadcrumb-item"><a href="#">Home</a></li>
+                            <li class="breadcrumb-item"><a href="#">Pages</a></li>
+                            <li class="breadcrumb-item text-white active" aria-current="page">Check Out Page</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+     <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                    <h5 class="section-title ff-secondary text-center text-primary fw-normal">Check Out</h5>
+                    <h1 class="mb-5">Thank You For Your Order</h1>
+                </div>
     <div class="checkout-container">
-        <h1>Checkout</h1>
+       
         <%
             Connection conn = null;
             PreparedStatement pstmt = null;

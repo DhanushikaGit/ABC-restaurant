@@ -1,191 +1,207 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Food Search</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <title>Craving Something?</title>
+    <link rel="stylesheet" href="styles.css">
     <style>
-        :root {
-            --primary: #FEA116;
-            --light: #F1F8FF;
-            --dark: #0F172B;
-        }
+  /* General Styling */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f3ec;
+    color: #333;
+}
 
-        body {
-            font-family: Arial, sans-serif;
-            background-color: black;
-            color: var(--light);
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
 
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1.5rem;
-            background-color: black;
-        }
+/* Header Styling */
+header {
+    width: 100%;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f8f3ec;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
 
-        header img {
-            height: 150px; /* Increase logo size */
-        }
+header .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #e99656;
+}
 
-        nav {
-            display: flex;
-            gap: 1rem;
-        }
+nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
 
-        nav a {
-            color: var(--light);
-            text-decoration: none;
-            font-weight: bold;
-            transition: color 0.3s;
-        }
+nav a:hover {
+    color:  #d4854c;
+}
 
-        nav a:hover {
-            color: var(--primary);
-        }
+nav .signup {
+    background-color: #333;
+    color: white;
+    padding: 10px 25px;
+    border-radius: 25px;
+    transition: background-color 0.3s ease;
+}
 
-        .sign-up-btn {
-            background-color: var(--primary);
-            color: var(--light);
-            padding: 0.5rem 1rem;
-            border-radius: 0.25rem;
-            transition: background-color 0.3s, color 0.3s;
-        }
+nav .signup:hover {
+    background-color: white;
+}
 
-        .sign-up-btn:hover {
-            background-color: white;
-            color: var(--primary);
-        }
+/* Content Area */
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 0;
+    width: 80%;
+}
 
-        main {
-            flex: 1;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 2rem;
-            gap: 2rem;
-            flex-wrap: wrap;
-        }
+/* Food Images Styling */
+.food-images {
+    position: relative;
+    width: 350px;
+    height: 350px;
+    margin-right: 70px; /* Adds spacing between the images and text */
+}
 
-        .search-container {
-            max-width: 500px;
-            width: 100%;
-            margin-right: auto;
-        }
+.food-images img {
+    border-radius: 50%;
+    position: absolute;
+    width: 250px; /* Larger image size */
+    height: 250px; /* Larger image size */
 
-        .search-container h1 {
-            margin-bottom: 0.5rem;
-        }
+   
+}
 
-        .search-container p {
-            margin-bottom: 1rem;
-        }
+.food-images .top {
+    top: 0%;
+    left: 50%;
+    transform: translateX(-50%);
+}
 
-        .search-container input {
-            width: 100%;
-            padding: 1rem;
-            margin-bottom: 1rem;
-            border: 2px solid var(--primary);
-            border-radius: 0.5rem;
-            background-color: var(--light);
-            color: var(--dark);
-        }
+.food-images .left {
+    bottom: -50%;
+    left: 80%;
+    transform: translateY(-10%);
+}
 
-        .search-container button {
-            width: 100%;
-            padding: 1rem;
-            background-color: var(--primary);
-            color: var(--light);
-            border: none;
-            border-radius: 0.5rem;
-            cursor: pointer;
-            transition: background-color 0.3s, color 0.3s;
-        }
+.food-images .right {
+    bottom: -50%;
+    right: 90%;
+    transform: translateY(-10%);
+}
 
-        .search-container button:hover {
-            background-color: white;
-            color: var(--primary);
-        }
+/* Text Content Styling */
+.text-content {
+    max-width: 1000px;  /* Increased width for more space */
+    text-align: left;
+    margin-left: 300px;  /* Added margin to move it closer to the left */
+     margin-top: 250px;
+}
 
-        .food-images {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1.5rem;
-            justify-content: center;
-        }
+.text-content h1 {
+    font-size: 52px; /* Increased font size */
+    color: #e99656;
+    margin-bottom: 25px;
+}
 
-        .food-images .food-item {
-            border-radius: 50%;
-            overflow: hidden;
-            box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
-            width: 150px;
-            height: 150px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: transform 0.3s ease-in-out;
-        }
+.text-content p {
+    font-size: 22px; /* Increased font size */
+    color: #666;
+    margin-bottom: 20px;
+}
 
-        .food-images .food-item img {
-            border-radius: 50%;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+/* Search Bar Styling */
+.search-bar {
+    margin-top: 35px;
+    display: flex;
+    align-items: center;
+}
 
-        .food-images .food-item:hover {
-            transform: scale(1.1);
-        }
+.search-bar select {
+    padding: 15px;  /* Increased padding */
+    font-size: 18px;  /* Increased font size */
+    border-radius: 25px 0 0 25px;
+    border: 1px solid #ccc;
+    flex: 1;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.search-bar select:focus {
+    border-color: #e99656;
+}
+
+.search-bar button {
+    padding: 15px 40px;  /* Increased padding */
+    font-size: 18px;  /* Increased font size */
+    border-radius: 0 25px 25px 0;
+    border: none;
+    background-color: #e99656;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-bar button:hover {
+    background-color: white;
+}
+
+  
     </style>
-    <script>
-        function searchLocation() {
-            const input = document.getElementById('locationInput').value.toLowerCase();
-            const cities = ['colombo', 'kandy', 'galle', 'matara', 'jaffna', 'negombo', 'anuradhapura'];
-
-            if (cities.includes(input)) {
-                alert(`Searching for food options in ${input.charAt(0).toUpperCase() + input.slice(1)}!`);
-            } else {
-                alert("Sorry, we couldn't find the location. Please try another city.");
-            }
-        }
-    </script>
 </head>
 <body>
-    <header>
-        <div>
-            <img src="/restaurant/customer/images/A B C (2).png" alt="Logo">
-        </div>
-        <nav>
-            <a href="#">What we offer</a>
-            <a href="/restaurant/customer/jsp/login.jsp">Login</a>
-            <a href="/restaurant/customer/jsp/register.jsp" class="sign-up-btn">Sign Up</a>
-        </nav>
-    </header>
-
-    <main>
-        <div class="search-container">
-            <h1 class="text-4xl font-bold text-[#FEA116]">Craving Something?</h1>
-            <p class="text-lg text-gray-300">Let's get you started!</p>
-            <input type="text" id="locationInput" placeholder="Let us know the location.">
-            <button onclick="searchLocation()">Search</button>
-        </div>
-        <div class="food-images">
-            <div class="food-item">
-                <img src="/restaurant/customer/images/menu-1.jpg" alt="Food1">
+    <div class="container">
+        <header>
+            <div class="logo">🔺</div>
+            <nav>
+                <a href="#">What we offer</a>
+                <a href="/restaurant/customer/jsp/login.jsp">Login</a>
+                <a href="/restaurant/customer/jsp/register.jsp" class="signup">Sign Up</a>
+            </nav>
+        </header>
+        <div class="content">
+            <div class="food-images">
+                <img src="/restaurant/customer/images/menu-1.jpg" alt="Dumplings" class="top">
+                <img src="/restaurant/customer/images/menu-2.jpg" alt="Crepes" class="left">
+                <img src="/restaurant/customer/images/menu-3.jpg" alt="Smoothie" class="right">
             </div>
-            <div class="food-item">
-                <img src="/restaurant/customer/images/menu-2.jpg" alt="Food2">
-            </div>
-            <div class="food-item">
-                <img src="/restaurant/customer/images/menu-3.jpg" alt="Food3">
+            <div class="text-content">
+                <h1>Craving Something?</h1>
+                <p>Let's get you started!</p>
+                <div class="search-bar">
+                    <form action="/restaurant/customer/jsp/register.jsp" method="get">
+                        <select name="location">
+                            <option value="anuradhapura">Anuradhapura</option>
+                            <option value="colombo">Colombo</option>
+                            <option value="galle">Galle</option>
+                            <option value="kandy">Kandy</option>
+                            <option value="jaffna">Jaffna</option>
+                        </select>
+                        <button type="submit">Search</button>
+                    </form>
+                </div>
             </div>
         </div>
-    </main>
+    </div>
 </body>
 </html>

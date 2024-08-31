@@ -3,6 +3,11 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link href="/restaurant/customer/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="/restaurant/customer/css/index.css" rel="stylesheet">
+     <link href="/restaurant/customer/images/A B C (1).png" rel="icon">
     <meta charset="UTF-8">
     <title>Food Menu</title>
     <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
@@ -154,7 +159,7 @@
         }
 
         .menu-item-actions button:hover {
-            background-color: #e68900;
+            background-color: white;
         }
           :root {
             --primary: #FEA116;
@@ -195,21 +200,7 @@
         }
         
     </style>
-     
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="" name="keywords">
-    <meta content="" name="description">
-
-    <link href="/restaurant/customer/images/A B C (1).png" rel="icon">
-
-  
     
-     <!-- Customized Bootstrap Stylesheet -->
-    <link href="/restaurant/customer/css/bootstrap.min.css" rel="stylesheet">
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.1.5/css/tempusdominus-bootstrap-4.min.css" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.1.5/js/tempusdominus-bootstrap-4.min.js"></script>
 </head>
 <body>
 

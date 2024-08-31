@@ -1,3 +1,4 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,8 +10,7 @@
     <meta content="" name="description">
  <link href="/restaurant/customer/images/A B C (1).png" rel="icon">
 
-    <!-- Favicon -->
-    <link href="/restaurant/customer/images/A B C (1).png" rel="icon">
+   
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -986,6 +986,7 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+    </div>
 </body>
 
 </html>
