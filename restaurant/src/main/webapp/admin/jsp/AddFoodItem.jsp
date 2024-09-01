@@ -234,7 +234,7 @@
     <br>
     <table>
         <tr>
-            <th>ID</th>
+       
             <th>Name</th>
             <th>Description</th>
             <th>Price</th>
@@ -267,7 +267,7 @@
                 while (rs.next()) {
         %>
         <tr>
-            <td><%= rs.getInt("id") %></td>
+         
             <td><%= rs.getString("name") %></td>
             <td><%= rs.getString("description") %></td>
             <td><%= rs.getBigDecimal("price") %></td>
