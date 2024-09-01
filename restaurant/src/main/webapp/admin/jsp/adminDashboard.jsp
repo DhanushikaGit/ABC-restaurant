@@ -1,3 +1,5 @@
+
+You said:
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="com.JavaWebApplication.Model.mydb" %>
@@ -29,13 +31,16 @@
         double totalSales = 0.0;
         int totalDeliveries = 0;
         double salesIncreasePercentage = 0.0;
+        int totalCustomers = 0;
+        double customerSales = 0.0;
+        int totalStaff = 0; // Variable to store staff count
 
         try {
             if (conn != null) {
                 stmt = conn.createStatement();
 
                 // Query to get total number of products
-                rs = stmt.executeQuery("SELECT COUNT(*) FROM food_items");
+                rs = stmt.executeQuery("SELECT COUNT(*) FROM staff");
                 if (rs.next()) {
                     totalProducts = rs.getInt(1);
                 }
@@ -49,20 +54,40 @@
                 rs.close();
 
                 // Query to get total deliveries
-                rs = stmt.executeQuery("SELECT COUNT(*) FROM deliveries");
+                rs = stmt.executeQuery("SELECT COUNT(*) FROM staff");
                 if (rs.next()) {
                     totalDeliveries = rs.getInt(1);
                 }
                 rs.close();
 
                 // Query to calculate sales increase percentage
-                // Assuming 'previous_sales' table contains past sales data
                 rs = stmt.executeQuery(
                     "SELECT COALESCE((SUM(price) - (SELECT COALESCE(SUM(price), 0) FROM previous_sales)) / "
                     + "(SELECT COALESCE(SUM(price), 0) FROM previous_sales) * 100), 0) "
                     + "FROM neworders WHERE status = 'completed'");
                 if (rs.next()) {
                     salesIncreasePercentage = rs.getDouble(1);
+                }
+                rs.close();
+                
+                // Query to get total number of customers
+                rs = stmt.executeQuery("SELECT COUNT(*) FROM customers"); // Assuming 'customers' table exists
+                if (rs.next()) {
+                    totalCustomers = rs.getInt(1);
+                }
+                rs.close();
+                
+                // Query to get total sales by customers
+                rs = stmt.executeQuery("SELECT COALESCE(SUM(price), 0) FROM neworders WHERE status = 'completed'");
+                if (rs.next()) {
+                    customerSales = rs.getDouble(1);
+                }
+                rs.close();
+                
+                // Query to get total number of staff members
+                rs = stmt.executeQuery("SELECT COUNT(*) FROM staff");
+                if (rs.next()) {
+                    totalStaff = rs.getInt(1);
                 }
                 rs.close();
             }
@@ -78,6 +103,7 @@
 
     <div class="container-fluid px-4">
         <div class="row g-3 my-2">
+            <!-- Existing stat cards -->
             <div class="col-md-3">
                 <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
                     <div>
@@ -115,6 +141,39 @@
                         <p class="fs-5">Increase</p>
                     </div>
                     <i class="fas fa-chart-line fs-1 primary-text border rounded-full secondary-bg p-3"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="row g-3 my-2">
+            <!-- New stat cards for customers and staff -->
+            <div class="col-md-3">
+                <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
+                    <div>
+                        <h3 class="fs-2"><%= totalCustomers %></h3>
+                        <p class="fs-5">Customers</p>
+                    </div>
+                    <i class="fas fa-users fs-1 primary-text border rounded-full secondary-bg p-3"></i>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
+                    <div>
+                        <h3 class="fs-2">$<%= String.format("%.2f", customerSales) %></h3>
+                        <p class="fs-5">Customer Sales</p>
+                    </div>
+                    <i class="fas fa-user-tag fs-1 primary-text border rounded-full secondary-bg p-3"></i>
+                </div>
+            </div>
+            
+            <div class="col-md-3">
+                <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
+                    <div>
+                        <h3 class="fs-2"><%= totalStaff %></h3>
+                        <p class="fs-5">Staff Members</p>
+                    </div>
+                    <i class="fas fa-users fs-1 primary-text border rounded-full secondary-bg p-3"></i>
                 </div>
             </div>
         </div>
