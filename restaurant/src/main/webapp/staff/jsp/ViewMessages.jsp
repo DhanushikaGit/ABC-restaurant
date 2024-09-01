@@ -6,13 +6,79 @@
     <meta charset="UTF-8">
     <title>View Messages</title>
     <style>
-        .btn { padding: 5px 10px; border: none; cursor: pointer; }
-        .btn-primary { background-color: #007bff; color: #fff; }
-        .btn-danger { background-color: #dc3545; color: #fff; }
-        table { width: 100%; border-collapse: collapse; }
-        th, td { padding: 10px; border: 1px solid #ddd; text-align: left; }
-        th { background-color: #f2f2f2; }
-        textarea { width: 100%; }
+         :root {
+              --primary: #FEA116;
+            --light: #F1F8FF;
+            --dark: #0F172B;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: var(--dark);
+            margin: 0;
+            padding: 20px;
+        }
+
+        h2 {
+            color: var(--primary);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #fff;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 12px;
+            border: 1px solid var(--border);
+            text-align: left;
+        }
+
+        th {
+            background-color: var(--primary);
+            color: #fff;
+        }
+
+        tr:nth-child(even) {
+            background-color: var(--light);
+        }
+
+        tr:nth-child(odd) {
+            background-color: #fff;
+        }
+
+        textarea {
+            width: 100%;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            padding: 8px;
+            resize: vertical;
+        }
+
+        .btn {
+            padding: 8px 15px;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+            border-radius: 4px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: #fff;
+        }
+
+        .btn-danger {
+            background-color: var(--danger);
+            color: #fff;
+        }
+
+        .btn-primary:hover, .btn-danger:hover {
+            opacity: 0.8;
+        }
     </style>
     
 </head>

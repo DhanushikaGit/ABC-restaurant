@@ -7,12 +7,93 @@
     <title>View Reservations</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        .btn { padding: 5px 10px; border: none; cursor: pointer; font-size: 16px; }
-        .btn-success { background-color: #28a745; color: #fff; }
-        .btn-danger { background-color: #dc3545; color: #fff; }
-        .btn-warning { background-color: #ffc107; color: #000; }
-        .btn-primary { background-color: #007bff; color: #fff; }
-        .icon { font-size: 16px; }
+               :root {
+            --primary: #FEA116;
+            --light: #F1F8FF;
+            --dark: #0F172B;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: var(--light);
+            color: var(--dark);
+        }
+
+        h2 {
+            color: var(--primary);
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+
+        input[type="text"], input[type="date"] {
+            padding: 5px;
+            margin: 5px;
+            border: 1px solid var(--dark);
+            border-radius: 3px;
+        }
+
+        .btn {
+            padding: 5px 10px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 3px;
+        }
+
+        .btn-success {
+            background-color: #28a745;
+            color: #fff;
+        }
+
+        .btn-danger {
+            background-color: #dc3545;
+            color: #fff;
+        }
+
+        .btn-warning {
+            background-color: #ffc107;
+            color: #000;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: #fff;
+        }
+
+        .btn-success:hover, .btn-danger:hover, .btn-warning:hover, .btn-primary:hover {
+            opacity: 0.8;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border: 1px solid var(--dark);
+        }
+
+        th {
+            background-color: var(--primary);
+            color: #fff;
+        }
+
+        tr:nth-child(even) {
+            background-color: var(--light);
+        }
+
+        tr:nth-child(odd) {
+            background-color: #ffffff;
+        }
+
+        .icon {
+            font-size: 16px;
+        }
     </style>
 </head>
 <body>

@@ -7,11 +7,34 @@
     <title>Manage Orders</title>
     <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
     <style>
+        :root {
+            --primary: #FEA116; /* Primary color */
+            --light: #F1F8FF;   /* Light color */
+            --dark: #0F172B;    /* Dark color */
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
+            font-family: Arial, sans-serif; /* Basic font family */
+            margin: 0; /* Remove default margin */
+            padding: 0; /* Remove default padding */
+            background-color: #f4f4f4; /* Light gray background */
+        }
+
+        .page-header {
+            background-color: #ffffff; /* White background for the header */
+            padding: 20px; /* Padding inside the header */
+            border-bottom: 1px solid #ddd; /* Light border at the bottom */
+            margin-bottom: 20px; /* Space below the header */
+        }
+
+        .page-header h1 {
+            margin: 0; /* Remove default margin */
+            font-size: 1.5rem; /* Larger font size for the title */
+            color: #333; /* Dark gray color */
+        }
+
+        .page-header small {
+            color: #888; /* Light gray color for the breadcrumb */
         }
 
         .orders-container {
@@ -42,8 +65,17 @@
             background-color: #f4f4f4;
         }
 
+        tr:hover {
+            background-color: #f9f9f9; /* Light gray background on hover */
+        }
+
+        .order-item img {
+            max-width: 50px;
+            border-radius: 8px;
+        }
+
         .order-actions button {
-            background-color: #FEA116;
+            background-color: var(--primary); /* Primary color */
             color: #fff;
             border: none;
             padding: 5px 10px;
@@ -55,36 +87,40 @@
             background-color: #e68900;
         }
 
-        .order-item img {
-            max-width: 50px;
-            border-radius: 8px;
-  .search-container {
+        /* Search Form Styling */
+        .search-container {
             margin-bottom: 20px;
         }
+
         .search-container input[type="text"] {
             padding: 10px;
             border: 1px solid #ddd;
             border-radius: 4px;
             width: 200px;
         }
+
         .search-container button {
             padding: 10px 15px;
             border: none;
-            background-color: #FEA116;
+            background-color: var(--primary); /* Primary color */
             color: #fff;
             border-radius: 4px;
             cursor: pointer;
         }
+
         .search-container button:hover {
             background-color: #e68900;
         }
     </style>
 </head>
 <body>
-  
-    <div class="orders-container">
+    <%@ include file="adminheader.jsp" %>
+    <div class="page-header">
         <h1>Manage Orders</h1>
+        <small>Admin Panel</small>
+    </div>
         
+    <div class="orders-container">
         <!-- Search Form -->
         <div class="search-container">
             <form method="get" action="">
@@ -105,7 +141,6 @@
                     <th>Order Date</th>
                     <th>Status</th>
                     <th>Items</th>
-                    
                 </tr>
             </thead>
             <tbody>
@@ -170,7 +205,6 @@
                             itemsRs.close();
                         %>
                     </td>
-                    
                 </tr>
             <%
                     }

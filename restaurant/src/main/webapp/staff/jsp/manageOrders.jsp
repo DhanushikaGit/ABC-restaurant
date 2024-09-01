@@ -7,7 +7,7 @@
     <title>Manage Orders</title>
     <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
     <style>
-        body {
+   body {
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
             margin: 0;
@@ -23,6 +23,11 @@
             border-radius: 8px;
         }
 
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
         table {
             width: 100%;
             border-collapse: collapse;
@@ -34,7 +39,7 @@
         }
 
         th, td {
-            padding: 10px;
+            padding: 12px;
             text-align: left;
         }
 
@@ -46,27 +51,44 @@
             background-color: #FEA116;
             color: #fff;
             border: none;
-            padding: 5px 10px;
+            padding: 8px 12px;
             border-radius: 4px;
             cursor: pointer;
+            font-size: 14px;
+            margin-right: 5px;
         }
 
         .order-actions button:hover {
             background-color: #e68900;
         }
 
+        .order-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
         .order-item img {
-            max-width: 50px;
+            max-width: 60px;
             border-radius: 8px;
-  .search-container {
+            margin-right: 10px;
+        }
+
+        .order-item div {
+            font-size: 14px;
+        }
+
+        .search-container {
             margin-bottom: 20px;
         }
+
         .search-container input[type="text"] {
             padding: 10px;
             border: 1px solid #ddd;
             border-radius: 4px;
-            width: 200px;
+            width: 250px;
         }
+
         .search-container button {
             padding: 10px 15px;
             border: none;
@@ -74,7 +96,10 @@
             color: #fff;
             border-radius: 4px;
             cursor: pointer;
+            font-size: 14px;
+            margin-left: 10px;
         }
+
         .search-container button:hover {
             background-color: #e68900;
         }

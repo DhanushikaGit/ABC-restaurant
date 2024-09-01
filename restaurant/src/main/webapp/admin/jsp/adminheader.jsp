@@ -22,35 +22,45 @@
                 <i class="fa fa-utensils me-3"></i>ABC Restaurant
             </div>
             
-            <div class="list-group list-group-flush my-3">
-                <a href="#" class="list-group-item list-group-item-action bg-transparent second-text active">
-                    <i class="fas fa-tachometer-alt me-2"></i>Dashboard
-                </a>
-                <a href="" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
-                    <i class="fas fa-project-diagram me-2"></i>Manage Food
-                </a>
-                <a href="/restaurant/admin/jsp/staff.jsp" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
-                    <i class="fas fa-chart-line me-2"></i>Manage Staff
-                </a>
-                <a href="/restaurant/admin/jsp/manage-customers.jsp" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
-                    <i class="fas fa-paperclip me-2"></i>Manage Customer
-                </a>
-                <a href="/restaurant/admin/jsp/reservation.jsp" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
-                    <i class="fas fa-shopping-cart me-2"></i>Our Reservation
-                </a>
-                <a href="" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
-                    <i class="fas fa-gift me-2"></i>Products
-                </a>
-                <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
-                    <i class="fas fa-comment-dots me-2"></i>Chat
-                </a>
-                <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
-                    <i class="fas fa-map-marker-alt me-2"></i>Outlet
-                </a>
-                <a href="/restaurant/admin/jsp/adminLogin.jsp" class="list-group-item list-group-item-action bg-transparent text-danger fw-bold">
-                    <i class="fas fa-power-off me-2"></i>Logout
-                </a>
-            </div>
+         <div class="list-group list-group-flush my-3">
+    <a href="#" class="list-group-item list-group-item-action bg-transparent second-text active">
+        <i class="fas fa-tachometer-alt me-2"></i>Dashboard
+    </a>
+    <a href="/restaurant/admin/jsp/AddFoodItem.jsp" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
+        <i class="fas fa-project-diagram me-2"></i>Manage Food
+    </a>
+    <a href="/restaurant/admin/jsp/staff.jsp" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
+        <i class="fas fa-users me-2"></i>Manage Staff
+    </a>
+    <a href="/restaurant/admin/jsp/manage-customers.jsp" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
+        <i class="fas fa-user-friends me-2"></i>Manage Customer
+    </a>
+    <a href="/restaurant/admin/jsp/reservation.jsp" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
+        <i class="fas fa-calendar-alt me-2"></i>Our Reservation
+    </a>
+    <a href="/restaurant/admin/jsp/ManageFacilities.jsp" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
+        <i class="fas fa-building me-2"></i>Manage Facilities
+    </a>
+    <a href="/restaurant/admin/jsp/manageServices.jsp" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
+        <i class="fas fa-concierge-bell me-2"></i>Manage Services
+    </a>
+    <a href="/restaurant/admin/jsp/managegallery.jsp" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
+        <i class="fas fa-images me-2"></i>Manage Gallery
+    </a>
+    <a href="/restaurant/admin/jsp/managefeedback.jsp" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
+        <i class="fas fa-comment-alt me-2"></i>Manage Feedback
+    </a>
+    <a href="/restaurant/admin/jsp/orderDetails.jsp" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
+        <i class="fas fa-receipt me-2"></i>Our Orders
+    </a>
+    <a href="/restaurant/admin/jsp/replymessage.jsp" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
+        <i class="fas fa-comment-dots me-2"></i>Chat
+    </a>
+    <a href="/restaurant/admin/jsp/adminLogin.jsp" class="list-group-item list-group-item-action bg-transparent text-danger fw-bold">
+        <i class="fas fa-power-off me-2"></i>Logout
+    </a>
+</div>
+         
         </div>
         <!-- /#sidebar-wrapper -->
 
@@ -84,6 +94,7 @@
                     </ul>
                 </div>
             </nav>
+            
 
             
                    

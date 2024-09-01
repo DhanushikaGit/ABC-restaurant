@@ -155,37 +155,33 @@
 
 
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // Example with Bootstrap datetimepicker:
-        // $('#datetime').datetimepicker({
-        //     format: 'DD/MM/YYYY HH:mm'
-        // });
+  document.addEventListener('DOMContentLoaded', function() {
+	    document.getElementById('reservation_date').addEventListener('change', function() {
+	        validateDateTime();
+	    });
+	    document.getElementById('reservation_time').addEventListener('change', function() {
+	        validateDateTime();
+	    });
 
-        document.getElementById('date').addEventListener('change', function() {
-            validateDateTime();
-        });
-        document.getElementById('time').addEventListener('change', function() {
-            validateDateTime();
-        });
+	    function validateDateTime() {
+	        const dateInput = document.getElementById('reservation_date').value;
+	        const timeInput = document.getElementById('reservation_time').value;
 
-        function validateDateTime() {
-            const dateInput = document.getElementById('date').value;
-            const timeInput = document.getElementById('time').value;
+	        if (dateInput && timeInput) {
+	            const selectedDateTime = new Date(`${dateInput}T${timeInput}`);
+	            const currentDate = new Date();
+	            const maxValidDate = new Date();
+	            maxValidDate.setDate(currentDate.getDate() + 30); // Add 30 days to the current date
 
-            if (dateInput && timeInput) {
-                const selectedDateTime = new Date(`${dateInput}T${timeInput}`);
-                const currentDate = new Date();
-                const maxValidDate = new Date();
-                maxValidDate.setMonth(currentDate.getMonth() + 3);
+	            if (selectedDateTime > maxValidDate || selectedDateTime < currentDate) {
+	                alert('Please select a date within the next 30 days.');
+	                document.getElementById('reservation_date').value = ''; // Clear the invalid date
+	                document.getElementById('reservation_time').value = ''; // Clear the invalid time
+	            }
+	        }
+	    }
+	});
 
-                if (selectedDateTime > maxValidDate) {
-                    alert('Please select a date within the next 3 months.');
-                    document.getElementById('date').value = ''; // Clear the invalid date
-                    document.getElementById('time').value = ''; // Clear the invalid time
-                }
-            }
-        }
-    });
 </script>
   
 
