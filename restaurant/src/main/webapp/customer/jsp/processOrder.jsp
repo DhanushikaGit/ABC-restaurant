@@ -26,6 +26,7 @@
         String phone = request.getParameter("phone");
         String address = request.getParameter("address");
         String paymentMethod = request.getParameter("payment_method");
+        String orderType = request.getParameter("order_type"); // New parameter
         int orderId = 0;
 
         try {
@@ -33,7 +34,7 @@
             conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/restaurant", "root", "1234");
 
             // Insert order into neworders table
-            String insertSql = "INSERT INTO neworders (user_id, name, email, phone, address, payment_method) VALUES (?, ?, ?, ?, ?, ?)";
+            String insertSql = "INSERT INTO neworders (user_id, name, email, phone, address, payment_method, order_type) VALUES (?, ?, ?, ?, ?, ?, ?)";
             pstmt = conn.prepareStatement(insertSql, Statement.RETURN_GENERATED_KEYS);
             pstmt.setInt(1, userId);
             pstmt.setString(2, name);
@@ -41,6 +42,7 @@
             pstmt.setString(4, phone);
             pstmt.setString(5, address);
             pstmt.setString(6, paymentMethod);
+            pstmt.setString(7, orderType); // Set order type
             pstmt.executeUpdate();
 
             // Retrieve the generated order ID
@@ -64,6 +66,7 @@
         <p><strong>Phone:</strong> <%= phone %></p>
         <p><strong>Address:</strong> <%= address %></p>
         <p><strong>Payment Method:</strong> <%= paymentMethod %></p>
+        <p><strong>Order Type:</strong> <%= orderType %></p> <!-- Display order type -->
     </div>
 
     <div class="order-items">

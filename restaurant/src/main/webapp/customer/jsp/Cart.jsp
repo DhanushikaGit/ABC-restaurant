@@ -3,11 +3,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link href="/restaurant/customer/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/restaurant/customer/css/bootstrap.min.css" rel="stylesheet">
     <!-- Template Stylesheet -->
     <link href="/restaurant/customer/css/index.css" rel="stylesheet">
     <link href="/restaurant/customer/images/A B C (1).png" rel="icon">
-    <meta charset="UTF-8">
     <meta charset="UTF-8">
     <title>Your Cart</title>
     <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
@@ -98,7 +97,14 @@
         .edit-button:hover, .cancel-button:hover {
             background-color: #0056b3;
         }
-        
+
+        .cart-total {
+            font-size: 1.2rem;
+            margin-top: 20px;
+            text-align: right;
+            font-weight: bold;
+        }
+
         /*** Navbar ***/
         .navbar-dark .navbar-nav .nav-link {
             margin-left: 25px;
@@ -136,7 +142,7 @@
 
             .navbar-dark .navbar-collapse {
                 margin-top: 15px;
-                border-top: 1px solid rgba(255, 255, 255, .1)
+                border-top: 1px solid rgba(255, 255, 255, .1);
             }
 
             .navbar-dark .navbar-nav .nav-link,
@@ -159,7 +165,7 @@
                 z-index: 999;
                 background: transparent !important;
             }
-            
+
             .sticky-top.navbar-dark {
                 position: fixed;
                 background: var(--dark) !important;
@@ -168,7 +174,7 @@
     </style>
 </head>
 <body>
-  <%@ include file="header.jsp" %>
+    <%@ include file="header.jsp" %>
     <div class="container-xxl py-5 bg-dark hero-header mb-5">
         <div class="container text-center my-5 pt-5 pb-4">
             <h1 class="display-3 text-white mb-3 animated slideInDown">Order Your Favorites</h1>
@@ -203,38 +209,43 @@
                 rs = pstmt.executeQuery();
         %>
         <form action="<%= request.getContextPath() %>/customer/jsp/checkout.jsp" method="post">
-        <%
-                while (rs.next()) {
-                    BigDecimal price = rs.getBigDecimal("price");
-                    int quantity = rs.getInt("quantity");
-                    BigDecimal itemTotal = price.multiply(BigDecimal.valueOf(quantity));
-                    total = total.add(itemTotal);
-                    int cartId = rs.getInt("cart_id");
-        %>
-        <div class="cart-item">
-            <img src="<%= request.getContextPath() + "/uploads/" + rs.getString("image") %>" alt="Food Image">
-            <div class="cart-item-details">
-                <h3><%= rs.getString("name") %></h3>
-                <p>Quantity: <%= rs.getInt("quantity") %></p>
+            <% while (rs.next()) { 
+                BigDecimal price = rs.getBigDecimal("price");
+                int quantity = rs.getInt("quantity");
+                BigDecimal itemTotal = price.multiply(BigDecimal.valueOf(quantity));
+                total = total.add(itemTotal);
+                int cartId = rs.getInt("cart_id");
+            %>
+            <div class="cart-item">
+                <img src="<%= request.getContextPath() + "/uploads/" + rs.getString("image") %>" alt="Food Image">
+                <div class="cart-item-details">
+                    <h3><%= rs.getString("name") %></h3>
+                    <p>Quantity: <%= rs.getInt("quantity") %></p>
+                </div>
+                <div class="cart-item-price">
+                    $<%= itemTotal %>
+                </div>
+                <div class="cart-item-actions">
+                    <form action="<%= request.getContextPath() %>/customer/jsp/cancelCartItem.jsp" method="post" style="display:inline;">
+                        <input type="hidden" name="cart_id" value="<%= cartId %>">
+                        <button type="submit" class="cancel-button">Cancel</button>
+                    </form>
+                </div>
             </div>
-            <div class="cart-item-price">
-                $<%= itemTotal %>
+            <% } %>
+            <div class="cart-total">
+                Total: $<%= total %>
             </div>
-            <div class="cart-item-actions">
-                <form action="<%= request.getContextPath() %>/customer/jsp/editCartItem.jsp" method="post" style="display:inline;">
-    <input type="hidden" name="cart_id" value="<%= cartId %>">
-    <input type="number" name="quantity" value="<%= quantity %>" min="1" required> <!-- Include quantity input -->
-    <button type="submit" class="edit-button">Edit</button>
+            <input type="hidden" name="total" value="<%= total %>">
+            <form action="<%= request.getContextPath() %>/customer/jsp/checkout.jsp" method="post">
+    <div class="cart-actions">
+        <button type="submit"><i class="las la-credit-card"></i> Proceed to Checkout</button>
+        <p><a href="<%= request.getContextPath() %>/customer/jsp/customerViewFoodItems.jsp">Keep Shopping</a></p>
+    </div>
 </form>
-                
-                <form action="<%= request.getContextPath() %>/customer/jsp/cancelCartItem.jsp" method="post" style="display:inline;">
-                    <input type="hidden" name="cart_id" value="<%= cartId %>">
-                    <button type="submit" class="cancel-button">Cancel</button>
-                </form>
-            </div>
-        </div>
-        <%
-                }
+            
+        </form>
+        <% 
             } catch (Exception e) {
                 out.println("Error: " + e.getMessage());
             } finally {
@@ -243,15 +254,6 @@
                 if (conn != null) try { conn.close(); } catch (SQLException e) { e.printStackTrace(); }
             }
         %>
-        <div class="cart-total">
-            Total: $<%= total %>
-        </div>
-        <input type="hidden" name="total" value="<%= total %>">
-        <div class="cart-actions">
-            <button type="submit"><i class="las la-credit-card"></i> Proceed to Checkout</button>
-            <p><a href="<%= request.getContextPath() %>/customer/jsp/customerViewFoodItems.jsp">Keep Shopping</a></p>
-        </div>
-        </form>
     </div>
 </body>
 </html>

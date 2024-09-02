@@ -6,6 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Craving Something?</title>
     <link rel="stylesheet" href="styles.css">
+    
+     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+   
+      <link href="/restaurant/customer/images/A B C (1).png" rel="icon">
     <style>
   /* General Styling */
 body {
@@ -172,7 +178,10 @@ nav .signup:hover {
 <body>
     <div class="container">
         <header>
-            <div class="logo">🔺</div>
+           
+            <div class="sidebar-heading text-center py-4 primary-text fs-4 fw-bold text-uppercase border-bottom">
+                <i class="fa fa-utensils me-3"></i>ABC Restaurant
+            </div>
             <nav>
                 <a href="#">What we offer</a>
                 <a href="/restaurant/customer/jsp/login.jsp">Login</a>

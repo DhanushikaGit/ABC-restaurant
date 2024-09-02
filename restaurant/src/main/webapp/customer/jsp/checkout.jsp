@@ -7,7 +7,7 @@
 
     <!-- Template Stylesheet -->
     <link href="/restaurant/customer/css/index.css" rel="stylesheet">
-     <link href="/restaurant/customer/images/A B C (1).png" rel="icon">
+    <link href="/restaurant/customer/images/A B C (1).png" rel="icon">
     <meta charset="UTF-8">
     <meta charset="UTF-8">
     <title>Checkout</title>
@@ -100,30 +100,42 @@
             background-color: #e68900;
         }
 
+        .checkout-form .address-field {
+            display: none;
+        }
     </style>
+    <script>
+        function toggleAddressField() {
+            var deliveryField = document.getElementById("address-field");
+            var takeoutField = document.getElementById("takeout-field");
+            if (document.getElementById("delivery").checked) {
+                deliveryField.style.display = "block";
+            } else {
+                deliveryField.style.display = "none";
+            }
+        }
+    </script>
 </head>
 <body>
 
-
 <%@ include file="header.jsp" %>
     <div class="container-xxl py-5 bg-dark hero-header mb-5">
-                <div class="container text-center my-5 pt-5 pb-4">
-                    <h1 class="display-3 text-white mb-3 animated slideInDown">Check Out Your Order</h1>
-                    <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb justify-content-center text-uppercase">
-                            <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item"><a href="#">Pages</a></li>
-                            <li class="breadcrumb-item text-white active" aria-current="page">Check Out Page</li>
-                        </ol>
-                    </nav>
-                </div>
-            </div>
-     <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                    <h5 class="section-title ff-secondary text-center text-primary fw-normal">Check Out</h5>
-                    <h1 class="mb-5">Thank You For Your Order</h1>
-                </div>
+        <div class="container text-center my-5 pt-5 pb-4">
+            <h1 class="display-3 text-white mb-3 animated slideInDown">Check Out Your Order</h1>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb justify-content-center text-uppercase">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item"><a href="#">Pages</a></li>
+                    <li class="breadcrumb-item text-white active" aria-current="page">Check Out Page</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+    <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+        <h5 class="section-title ff-secondary text-center text-primary fw-normal">Check Out</h5>
+        <h1 class="mb-5">Thank You For Your Order</h1>
+    </div>
     <div class="checkout-container">
-       
         <%
             Connection conn = null;
             PreparedStatement pstmt = null;
@@ -180,8 +192,15 @@
             <input type="email" id="email" name="email" required>
             <label for="phone">Phone:</label>
             <input type="tel" id="phone" name="phone" required>
-            <label for="address">Address:</label>
-            <textarea id="address" name="address" rows="4" required></textarea>
+            <label>Order Type:</label>
+            <input type="radio" id="takeout" name="order_type" value="Takeout" checked onclick="toggleAddressField()">
+            <label for="takeout">Takeout</label>
+            <input type="radio" id="delivery" name="order_type" value="Delivery" onclick="toggleAddressField()">
+            <label for="delivery">Delivery</label>
+            <div id="address-field" class="address-field">
+                <label for="address">Address:</label>
+                <textarea id="address" name="address" rows="4"></textarea>
+            </div>
             <label for="payment_method">Payment Method:</label>
             <select id="payment_method" name="payment_method" required>
                 <option value="Credit Card">Credit Card</option>

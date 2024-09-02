@@ -29,8 +29,7 @@
     <!-- Customized Bootstrap Stylesheet -->
     <link href="/restaurant/customer/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Template Stylesheet -->
-    <link href="/restaurant/customer/css/index.css" rel="stylesheet">
+
     
     
     
