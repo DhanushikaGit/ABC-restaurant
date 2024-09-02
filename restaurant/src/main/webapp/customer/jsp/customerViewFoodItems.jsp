@@ -148,17 +148,19 @@
 
 .menu-item-actions button {
     background-color: var(--primary);
-    color: #fff;
+    color: black;
     border: none;
     padding: 10px 15px;
     border-radius: 4px;
     cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
+    transition:  var(--primary);
+    border: 1px solid var(--dark);
 }
 
 .menu-item-actions button:hover {
-    background-color: var(--dark);
-    color: #fff;
+    background-color: white;
+    color: black;
+    border: 1px solid var(--primary);
 }
 
 :root {
@@ -187,17 +189,18 @@ h2 {
     border: 1px solid var(--dark);
     border-radius: 5px;
     min-width: 150px;
+
 }
 
 .search-button {
     background-color: var(--primary);
-    color: var(--light);
+    color: black;
     cursor: pointer;
 }
 
 .search-button:hover {
-    background-color: var(--dark);
-    color: var(--light);
+    background-color: white;
+    color: black;
 }
 
 @media (max-width: 767.98px) {

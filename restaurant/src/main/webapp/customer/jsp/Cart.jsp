@@ -85,17 +85,19 @@
         }
 
         .edit-button, .cancel-button {
-            background-color: #007bff;
-            color: #fff;
+            background-color: var(--primary);
+            color: black;
             border: none;
             padding: 5px 10px;
             border-radius: 4px;
             cursor: pointer;
             margin-right: 10px;
+                border: 1px solid var(--primary);
         }
 
         .edit-button:hover, .cancel-button:hover {
-            background-color: #0056b3;
+            background-color: white;
+              border: 1px solid var(--primary);
         }
 
         .cart-total {
@@ -177,19 +179,19 @@
     <%@ include file="header.jsp" %>
     <div class="container-xxl py-5 bg-dark hero-header mb-5">
         <div class="container text-center my-5 pt-5 pb-4">
-            <h1 class="display-3 text-white mb-3 animated slideInDown">Order Your Favorites</h1>
+            <h1 class="display-3 text-white mb-3 animated slideInDown">Your Shopping Cart</h1>
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb justify-content-center text-uppercase">
                     <li class="breadcrumb-item"><a href="#">Home</a></li>
                     <li class="breadcrumb-item"><a href="#">Pages</a></li>
-                    <li class="breadcrumb-item text-white active" aria-current="page">Our Food Menu</li>
+                    <li class="breadcrumb-item text-white active" aria-current="page">Shopping Cart</li>
                 </ol>
             </nav>
         </div>
     </div>
     <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
         <h5 class="section-title ff-secondary text-center text-primary fw-normal">Our Menu</h5>
-        <h1 class="mb-5">Order Your Favorite Dish</h1>
+        <h1 class="mb-5">Your Shopping Cart</h1>
     </div>
     <div class="cart-container">
         <%
@@ -255,5 +257,6 @@
             }
         %>
     </div>
+     <%@ include file="footer.jsp" %>
 </body>
 </html>

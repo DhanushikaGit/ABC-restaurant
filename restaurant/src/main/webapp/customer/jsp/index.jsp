@@ -36,7 +36,20 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.1.5/css/tempusdominus-bootstrap-4.min.css" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.1.5/js/tempusdominus-bootstrap-4.min.js"></script>
-    
+    <style>
+     .result-item {
+        background-color: white;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        padding: 15px;
+        margin-bottom: 10px;
+    }
+    .result-item img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 4px;
+    }
+    </style>
 </head>
 
 <body>
@@ -49,19 +62,47 @@
        
        
             <div class="container-xxl py-5 bg-dark hero-header mb-5">
-                <div class="container my-5 py-5">
-                    <div class="row align-items-center g-5">
-                        <div class="col-lg-6 text-center text-lg-start">
-                            <h1 class="display-3 text-white animated slideInLeft">Enjoy Our<br>Delicious Meal</h1>
-                            <p class="text-white animated slideInLeft mb-4 pb-2">Welcome to ABC Restaurant, your premier dining destination across Sri Lanka!</p>
-                            <a href="/restaurant/customer/jsp/food.jsp" class="btn btn-primary py-sm-3 px-sm-5 me-3 animated slideInLeft">Order Your favourite </a>
-                        </div>
-                        <div class="col-lg-6 text-center text-lg-end overflow-hidden">
-                            <img class="img-fluid" src="/restaurant/customer/images/hero.png" alt="">
-                        </div>
-                    </div>
-                </div>
+    <div class="container my-5 py-5">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-6 text-center text-lg-start">
+                <h1 class="display-3 text-white animated slideInLeft">Find Our Services & Facilities</h1>
+                <p class="text-white animated slideInLeft mb-4 pb-2">Search for the best services and facilities we offer!</p>
+                
+                <!-- Search Form -->
+               <form id="searchForm" class="d-flex animated slideInLeft" onsubmit="performSearch(event)">
+                <input type="text" id="searchQuery" class="form-control me-2" placeholder="Search..." required>
+                <button type="submit" class="btn btn-primary">Search</button>
+            </form>
+
+            <!-- Search Results -->
+            <div id="searchResults" class="mt-4"></div>
             </div>
+            
+            <div class="col-lg-6 text-center text-lg-end overflow-hidden">
+                <img class="img-fluid" src="/restaurant/customer/images/hero.png" alt="">
+            </div>
+        </div>
+    </div>
+</div>
+            
+            <script>
+function performSearch(event) {
+    event.preventDefault(); // Prevent form from submitting normally
+    var query = document.getElementById('searchQuery').value;
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', '/restaurant/customer/jsp/searchResults.jsp?query=' + encodeURIComponent(query), true);
+    xhr.onload = function() {
+        if (xhr.status >= 200 && xhr.status < 300) {
+            // Display results
+            document.getElementById('searchResults').innerHTML = xhr.responseText;
+        } else {
+            // Handle error
+            document.getElementById('searchResults').innerHTML = '<p>Error retrieving results.</p>';
+        }
+    };
+    xhr.send();
+}
+</script>
 <script>
 (function ($) {
     "use strict";

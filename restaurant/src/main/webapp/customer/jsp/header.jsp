@@ -65,7 +65,13 @@
                     <a href="/restaurant/customer/jsp/Contact.jsp" class="nav-item nav-link">Contact</a>
                 </div>
                 <a href="/restaurant/customer/jsp/reservation.jsp" class="btn btn-primary py-2 px-4">Book A Table</a>
+                <a href="/restaurant/customer/jsp/Cart.jsp" class="nav-item nav-link">
+    <i class="fa fa-shopping-cart"></i>
+    <span id="cart-item-count" class="badge bg-danger">0</span> <!-- Placeholder for the count -->
+</a>
+                
                 <a href="/restaurant/customer/jsp/login.jsp" class="nav-item nav-link">Log Out</a>
+                
             </div>
         </nav>
     </div>

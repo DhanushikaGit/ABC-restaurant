@@ -4,15 +4,116 @@
 <html>
 <head>
     <meta charset="UTF-8">
+    <link href="/restaurant/customer/css/index.css" rel="stylesheet">
+    <link href="/restaurant/customer/images/A B C (1).png" rel="icon">
     <title>Order Confirmation</title>
     <!-- Add your stylesheet links here -->
     <style>
         /* Your existing CSS */
+        :root {
+            --primary: #FEA116;
+            --light: #F1F8FF;
+            --dark: #0F172B;
+        }
+
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .confirmation-container {
+            max-width: 800px;
+            margin: 50px auto;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        h2 {
+            color: var(--primary);
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .order-details p,
+        .order-items p {
+            margin: 5px 0;
+        }
+
+        .order-item {
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid #ddd;
+            padding: 10px 0;
+        }
+
+        .order-item img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-right: 20px;
+        }
+
+        .order-item-details {
+            flex-grow: 1;
+        }
+
+        .order-item-details h3 {
+            margin: 0;
+            font-size: 18px;
+            color: var(--dark);
+        }
+
+        .order-item-price {
+            font-size: 18px;
+            color: var(--primary);
+        }
+
+        .order-total {
+            text-align: right;
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 20px;
+            color: var(--primary);
+        }
+
+        .success-message {
+            padding: 10px;
+            background-color: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            font-size: 18px;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
 
 <%@ include file="header.jsp" %>
+<div class="container-xxl py-5 bg-dark hero-header mb-5">
+    <div class="container text-center my-5 pt-5 pb-4">
+        <h1 class="display-3 text-white mb-3 animated slideInDown">Your Delivery Summary</h1>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb justify-content-center text-uppercase">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item"><a href="#">Pages</a></li>
+                <li class="breadcrumb-item text-white active" aria-current="page">Your Delivery Summary</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+<div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+    <h5 class="section-title ff-secondary text-center text-primary fw-normal">Your Order Details</h5>
+    <h1 class="mb-5">Thank You For Your Order</h1>
+</div>
 
 <div class="confirmation-container">
     <%
@@ -58,6 +159,10 @@
             rs = pstmt.executeQuery();
 
     %>
+    <div class="success-message">
+        Your purchase was successful! Your order ID is <%= orderId %>.
+    </div>
+
     <div class="order-details">
         <h2>Order Details</h2>
         <p><strong>Order ID:</strong> <%= orderId %></p>
@@ -118,5 +223,6 @@
         }
     %>
 </div>
+<%@ include file="footer.jsp" %>
 </body>
 </html>
