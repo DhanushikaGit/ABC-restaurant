@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>Feedback Submitted</title>
     <link href="<c:url value='/customer/css/bootstrap.min.css'/>" rel="stylesheet">
+    <link href="/restaurant/customer/css/index.css" rel="stylesheet">
     <style>
         :root {
             --primary: #FEA116;
@@ -101,5 +102,6 @@
         <p>Your feedback has been submitted successfully.</p>
         <a href="feedback.jsp" class="btn btn-primary">Back to Feedback</a>
     </div>
+    <%@ include file="footer.jsp" %>
 </body>
 </html>

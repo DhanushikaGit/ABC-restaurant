@@ -6,7 +6,8 @@
     <meta charset="UTF-8">
     <title>Feedback - ABC Restaurant</title>
     <link href="<c:url value='/customer/css/bootstrap.min.css'/>" rel="stylesheet">
-    <link href="<c:url value='/customer/css/style.css'/>" rel="stylesheet">
+      <!-- Template Stylesheet -->
+    <link href="/restaurant/customer/css/index.css" rel="stylesheet">
     <style>
         .star-rating {
             display: flex;
@@ -100,7 +101,7 @@
     <%@ include file="header.jsp" %>
      <div class="container-xxl py-5 bg-dark hero-header mb-5">
         <div class="container text-center my-5 pt-5 pb-4">
-            <h1 class="display-3 text-white mb-3 animated slideInDown">Our Gallery</h1>
+            <h1 class="display-3 text-white mb-3 animated slideInDown">Feedback</h1>
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb justify-content-center text-uppercase">
                     <li class="breadcrumb-item"><a href="<c:url value='/index.jsp'/>">Home</a></li>

@@ -196,9 +196,9 @@
             <input type="text" name="search" class="form-control w-50" placeholder="Search by title or description" value="<%= request.getParameter("search") != null ? request.getParameter("search") : "" %>">
             <select name="category" class="form-control w-25 ml-3">
                 <option value="">Select Category</option>
-                <option value="Category1" <%= "Category1".equals(request.getParameter("category")) ? "selected" : "" %>>Category 1</option>
-                <option value="Category2" <%= "Category2".equals(request.getParameter("category")) ? "selected" : "" %>>Category 2</option>
-                <option value="Category3" <%= "Category3".equals(request.getParameter("category")) ? "selected" : "" %>>Category 3</option>
+                <option value="Category1" <%= "Category1".equals(request.getParameter("category")) ? "selected" : "" %>>Event</option>
+                <option value="Category2" <%= "Category2".equals(request.getParameter("category")) ? "selected" : "" %>>People</option>
+  
                 <!-- Add more categories as needed -->
             </select>
             <button type="submit" class="btn btn-primary ml-3">Search</button>
@@ -215,33 +215,43 @@
         String searchQuery = request.getParameter("search");
         String category = request.getParameter("category");
 
+        searchQuery = (searchQuery != null) ? searchQuery : "";
+        category = (category != null) ? category : "";
+
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/restaurant", "root", "1234");
 
             String sql = "SELECT id, title, description, image FROM gallery WHERE 1=1";
-            if (searchQuery != null && !searchQuery.trim().isEmpty()) {
+            if (!searchQuery.trim().isEmpty()) {
                 sql += " AND (title LIKE ? OR description LIKE ?)";
             }
-            if (category != null && !category.trim().isEmpty()) {
+            if (!category.trim().isEmpty()) {
                 sql += " AND category = ?";
             }
 
             pstmt = conn.prepareStatement(sql);
 
             int index = 1;
-            if (searchQuery != null && !searchQuery.trim().isEmpty()) {
+            if (!searchQuery.trim().isEmpty()) {
                 pstmt.setString(index++, "%" + searchQuery + "%");
                 pstmt.setString(index++, "%" + searchQuery + "%");
             }
-            if (category != null && !category.trim().isEmpty()) {
+            if (!category.trim().isEmpty()) {
                 pstmt.setString(index, category);
             }
 
             rs = pstmt.executeQuery();
 
-            if (!rs.isBeforeFirst()) {
-                out.println("<p>No results found for '" + searchQuery + "' in category '" + category + "'</p>");
+            if (!rs.isBeforeFirst()) { // Check if the result set is empty
+                String message = "No results found";
+                if (!searchQuery.isEmpty()) {
+                    message += " for '" + searchQuery + "'";
+                }
+                if (!category.isEmpty()) {
+                    message += " in category '" + category + "'";
+                }
+                out.println("<p>" + message + "</p>");
             }
 
             while (rs.next()) {
@@ -253,15 +263,15 @@
                     ? request.getContextPath() + "/uploads/" + imagePath 
                     : request.getContextPath() + "/uploads/default.png";
     %>
-    <div class="gallery-item">
-        <img src="<%= imageUrl %>" alt="Gallery Image">
-        <div class="gallery-item-details">
-            <div class="gallery-item-title"><%= title %></div>
-            <div class="gallery-item-description"><%= description %></div>
-            <button class="like-button"><i class="fas fa-thumbs-up"></i> Like</button>
-            <button class="share-button"><i class="fas fa-share-alt"></i> Share</button>
+        <div class="gallery-item">
+            <img src="<%= imageUrl %>" alt="Gallery Image">
+            <div class="gallery-item-details">
+                <div class="gallery-item-title"><%= title %></div>
+                <div class="gallery-item-description"><%= description %></div>
+                <button class="like-button"><i class="fas fa-thumbs-up"></i> Like</button>
+                <button class="share-button"><i class="fas fa-share-alt"></i> Share</button>
+            </div>
         </div>
-    </div>
     <%
             }
         } catch (Exception e) {
@@ -274,9 +284,10 @@
     %>
     </div>
     <!-- Gallery End -->
+    
+<%@ include file="footer.jsp" %>
 
-    <%@ include file="footer.jsp" %>
-
+   
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>

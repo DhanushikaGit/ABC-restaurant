@@ -6,6 +6,8 @@
     <meta charset="UTF-8">
     <title>View Feedback - ABC Restaurant</title>
     <link href="/restaurant/customer/images/A B C (1).png" rel="icon">
+        <!-- Template Stylesheet -->
+    <link href="/restaurant/customer/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
      :root {
@@ -204,12 +206,12 @@ h1 {
     <%@ include file="header.jsp" %>
 <div class="container-fluid py-5 bg-dark hero-header mb-5">
     <div class="container text-center my-5 pt-5 pb-4">
-        <h1 class="display-3 text-white mb-3">Contact Us</h1>
+        <h1 class="display-3 text-white mb-3">Feedback</h1>
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb justify-content-center text-uppercase">
                 <li class="breadcrumb-item"><a href="#" class="text-white">Home</a></li>
                 <li class="breadcrumb-item"><a href="#" class="text-white">Pages</a></li>
-                <li class="breadcrumb-item text-white active" aria-current="page">Contact</li>
+                <li class="breadcrumb-item text-white active" aria-current="page">Feedback</li>
             </ol>
         </nav>
     </div>
@@ -217,8 +219,8 @@ h1 {
 
     
     <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-        <h5 class="section-title ff-secondary text-center text-primary fw-normal">Contact Us</h5>
-        <h1 class="mb-5">Contact For Any Query</h1>
+        <h5 class="section-title ff-secondary text-center text-primary fw-normal">Feedback </h5>
+        <h1 class="mb-5">Our Feedback</h1>
     </div>
 
     <div class="container">

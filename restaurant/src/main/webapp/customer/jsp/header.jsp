@@ -7,12 +7,12 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
-<!-- Include jQuery before Bootstrap JavaScript -->
-<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- Favicon -->
     <link href="/restaurant/img/favicon.ico" rel="icon">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -26,8 +26,8 @@
     <!-- Libraries Stylesheet -->
     <link href="/restaurant/customer/lib/animate/animate.min.css" rel="stylesheet">
     <link href="/restaurant/customer/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="/restaurant/customer/owlcarousel/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
-    
+    <link href="/restaurant/customer/owlcarousel/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet">
+
     <!-- Customized Bootstrap Stylesheet -->
     <link href="/restaurant/customer/css/bootstrap.min.css" rel="stylesheet">
 
@@ -55,23 +55,22 @@
                     <a href="/restaurant/customer/jsp/ViewServices.jsp" class="nav-item nav-link">Service</a>
                     <a href="menu.jsp" class="nav-item nav-link">Menu</a>
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Pages</a>
-                        <div class="dropdown-menu m-0">
-                            <a href="/restaurant/customer/jsp/reservation.jsp" class="dropdown-item">Booking</a>
-                            <a href="/restaurant/customer/jsp/team.jsp" class="dropdown-item">Our Team</a>
-                            <a href="/restaurant/customer/jsp/viewFeedback.jsp" class="dropdown-item">Feedback</a>
-                        </div>
-                    </div>
+    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Pages</a>
+    <ul class="dropdown-menu">
+        <li><a href="/restaurant/customer/jsp/reservation.jsp" class="dropdown-item">Booking</a></li>
+        <li><a href="/restaurant/customer/jsp/team.jsp" class="dropdown-item">Our Team</a></li>
+        <li><a href="/restaurant/customer/jsp/viewFeedback.jsp" class="dropdown-item">Feedback</a></li>
+    </ul>
+</div>
+                    
                     <a href="/restaurant/customer/jsp/Contact.jsp" class="nav-item nav-link">Contact</a>
                 </div>
                 <a href="/restaurant/customer/jsp/reservation.jsp" class="btn btn-primary py-2 px-4">Book A Table</a>
                 <a href="/restaurant/customer/jsp/Cart.jsp" class="nav-item nav-link">
-    <i class="fa fa-shopping-cart"></i>
-    <span id="cart-item-count" class="badge bg-danger">0</span> <!-- Placeholder for the count -->
-</a>
-                
+                    <i class="fa fa-shopping-cart"></i>
+                    <span id="cart-item-count" class="badge bg-danger">0</span> <!-- Placeholder for the count -->
+                </a>
                 <a href="/restaurant/customer/jsp/login.jsp" class="nav-item nav-link">Log Out</a>
-                
             </div>
         </nav>
     </div>
@@ -85,7 +84,8 @@
     <!-- jQuery and Bootstrap JS (Required for dropdown and other components) -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    
 </body>
 
 </html>

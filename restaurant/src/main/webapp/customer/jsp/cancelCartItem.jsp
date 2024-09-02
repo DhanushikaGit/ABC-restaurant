@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="java.sql.*" %>
+    
 <%
     int cartId = Integer.parseInt(request.getParameter("cart_id"));
     Connection conn = null;

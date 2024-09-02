@@ -59,17 +59,17 @@ public class ContactServlet extends HttpServlet {
                 int rowsInserted = pstmt.executeUpdate();
                 
                 if (rowsInserted > 0) {
-                    response.sendRedirect("/restaurant/customer/jsp/Thankyou.jsp"); // Success page
+                    response.sendRedirect("/restaurant/customer/jsp/contacthank.jsp"); // Success page
                 } else {
-                    response.sendRedirect("error.jsp"); // Error page
+                    response.sendRedirect("/restaurant/customer/jsp/contacterror.jsp"); // Error page
                 }
             }
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
-            response.sendRedirect("error.jsp"); // JDBC Driver not found
+            response.sendRedirect("/restaurant/customer/jsp/contacterror.jsp"); // JDBC Driver not found
         } catch (SQLException e) {
             e.printStackTrace();
-            response.sendRedirect("error.jsp"); // SQL error
+            response.sendRedirect("/restaurant/customer/jsp/contacterror.jsp"); // SQL error
         }
     }
 }

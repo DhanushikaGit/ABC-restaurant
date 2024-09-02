@@ -5,7 +5,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Restoran - Bootstrap Restaurant Template</title>
+    <title>ABC Restaurant</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -112,8 +112,8 @@
                 <div class="col-lg-3 col-md-6">
                     <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">Company</h4>
                     <a class="btn btn-link" href="about.jsp">About Us</a>
-                    <a class="btn btn-link" href="contact.jsp">Contact Us</a>
-                    <a class="btn btn-link" href="booking.jsp">Reservation</a>
+                    <a class="btn btn-link" href="/restaurant/customer/jsp/Contact.jsp">Contact Us</a>
+                    <a class="btn btn-link" href="/restaurant//customer/jsp/reservation.jsp">Reservation</a>
                     <a class="btn btn-link" href="privacy.jsp">Privacy Policy</a>
                     <a class="btn btn-link" href="terms.jsp">Terms & Condition</a>
                 </div>
@@ -121,7 +121,7 @@
                     <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">Contact</h4>
                     <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA</p>
                     <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+012 345 67890</p>
-                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@example.com</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>abc@restaurant.com</p>
                     <div class="d-flex pt-2">
                         <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-twitter"></i></a>
                         <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-facebook-f"></i></a>
