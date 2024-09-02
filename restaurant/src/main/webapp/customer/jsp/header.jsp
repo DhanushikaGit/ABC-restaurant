@@ -52,8 +52,18 @@
                 <div class="navbar-nav ms-auto py-0 pe-4">
                     <a href="/restaurant/customer/jsp/index.jsp" class="nav-item nav-link">Home</a>
                     <a href="/restaurant/customer/jsp/about.jsp" class="nav-item nav-link">About</a>
-                    <a href="/restaurant/customer/jsp/ViewServices.jsp" class="nav-item nav-link">Service</a>
-                    <a href="menu.jsp" class="nav-item nav-link">Menu</a>
+                    
+                    <a href="/restaurant/customer/jsp/customerViewFoodItems.jsp" class="nav-item nav-link">Menu</a>
+                    
+                    <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Our Special</a>
+    <ul class="dropdown-menu">
+        <li><a href="/restaurant/customer/jsp/ViewServices.jsp" class="dropdown-item">Services</a></li>
+        <li><a href="/restaurant/customer/jsp/customerViewFoodItems.jsp" class="dropdown-item">Facilities</a></li>
+        <li><a href="/restaurant/customer/jsp/viewgallery.jsp" class="dropdown-item">Gallery</a></li>
+    </ul>
+           </div>         
+                     
                     <div class="nav-item dropdown">
     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Pages</a>
     <ul class="dropdown-menu">

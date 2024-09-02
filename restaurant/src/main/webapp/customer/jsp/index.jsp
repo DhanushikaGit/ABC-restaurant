@@ -49,6 +49,7 @@
         height: auto;
         border-radius: 4px;
     }
+   
     </style>
 </head>
 
@@ -59,7 +60,7 @@
         
        <%@ include file="header.jsp" %>
        
-       
+      
        
             <div class="container-xxl py-5 bg-dark hero-header mb-5">
     <div class="container my-5 py-5">

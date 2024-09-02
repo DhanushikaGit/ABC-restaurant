@@ -15,7 +15,7 @@
 
         body {
             font-family: Arial, sans-serif;
-            background-color:  #0F172B;
+            background-color: #0F172B;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -37,11 +37,8 @@
         }
 
         .card-header {
-          
             color: black;
-           
             text-align: center;
-           
             font-size: 44px;
             font-weight: bold;
         }
@@ -123,6 +120,17 @@
         .register-link a:hover {
             text-decoration: underline;
         }
+
+        .success-message {
+            color: #28a745; /* Green color for success message */
+            background-color: #d4edda; /* Light green background */
+            border: 1px solid #c3e6cb; /* Border color matching the background */
+            border-radius: 5px; /* Rounded corners */
+            padding: 10px; /* Padding for spacing */
+            text-align: center; /* Center text alignment */
+            margin-bottom: 15px; /* Space below the message */
+            font-size: 16px; /* Font size for better readability */
+        }
     </style>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
@@ -148,7 +156,13 @@
     </script>
 </head>
 <body>
- 
+<% 
+    String successMessage = request.getParameter("success");
+    if (successMessage != null && !successMessage.isEmpty()) {
+        out.print("<div class='success-message'>" + successMessage + "</div>");
+    }
+%>
+
 <main class="login-form">
     <div class="container">
         <div class="card">

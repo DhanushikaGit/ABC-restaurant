@@ -6,80 +6,86 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Craving Something?</title>
     <link rel="stylesheet" href="styles.css">
-    
-     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-   
-      <link href="/restaurant/customer/images/A B C (1).png" rel="icon">
+    <link href="/restaurant/customer/images/A B C (1).png" rel="icon">
     <style>
-  /* General Styling */
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f8f3ec;
-    color: #333;
-}
+        /* General Styling */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f3ec;
+            color: #333;
+        }
 
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-}
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
 
-/* Header Styling */
-header {
-    width: 100%;
-    padding: 20px 50px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #f8f3ec;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
+        /* Header Styling */
+        header {
+            width: 100%;
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #f8f3ec;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
 
-header .logo {
-    font-size: 24px;
-    font-weight: bold;
-    color: #e99656;
-}
+        .sidebar-heading {
+            font-size: 24px;
+            font-weight: bold;
+            color: #e99656;
+            display: flex;
+            align-items: center;
+        }
 
-nav a {
-    margin: 0 15px;
-    text-decoration: none;
-    color: #333;
-    font-weight: 600;
-    font-size: 16px;
-    transition: color 0.3s ease;
-}
+        .sidebar-heading i {
+            margin-right: 10px;
+        }
 
-nav a:hover {
-    color:  #d4854c;
-}
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
 
-nav .signup {
-    background-color: #333;
-    color: white;
-    padding: 10px 25px;
-    border-radius: 25px;
-    transition: background-color 0.3s ease;
-}
+        nav a:hover {
+            color: #d4854c;
+        }
 
-nav .signup:hover {
-    background-color: white;
-}
+        nav .signup {
+            background-color: #333;
+            color: white;
+            padding: 10px 25px;
+            border-radius: 25px;
+            transition: background-color 0.3s ease;
+        }
 
-/* Content Area */
-.content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 80px 0;
-    width: 80%;
-}
+        nav .signup:hover {
+            background-color: white;
+            color: #333;
+        }
 
+        /* Content Area */
+        .content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 80px 20px;
+            width: 100%;
+            max-width: 1200px;
+            margin-top: 20px;
+        }
+
+       
 /* Food Images Styling */
 .food-images {
     position: relative;
@@ -171,14 +177,12 @@ nav .signup:hover {
 .search-bar button:hover {
     background-color: white;
 }
-
-  
+       
     </style>
 </head>
 <body>
     <div class="container">
         <header>
-           
             <div class="sidebar-heading text-center py-4 primary-text fs-4 fw-bold text-uppercase border-bottom">
                 <i class="fa fa-utensils me-3"></i>ABC Restaurant
             </div>
@@ -214,3 +218,6 @@ nav .signup:hover {
     </div>
 </body>
 </html>
+
+
+

@@ -38,16 +38,13 @@ public class Register extends HttpServlet {
         String result = ud.insertUser(rb);
 
         if (result.equals("SUCCESS")) {
-            // Create a session and set the email attribute
-            HttpSession session = request.getSession();
-            session.setAttribute("email", email);
-            
-            // Redirect to the welcome page
-            response.sendRedirect(request.getContextPath() + "/customer/jsp/index.jsp");
+            // Redirect with a success message as a query parameter
+            response.sendRedirect(request.getContextPath() + "/customer/jsp/login.jsp?success=Registration successful!");
         } else {
             // Set an error message and forward to the registration page
             request.setAttribute("errorMessage", "Registration failed: " + result);
             request.getRequestDispatcher("/customer/jsp/register.jsp").forward(request, response);
         }
     }
+
 }
