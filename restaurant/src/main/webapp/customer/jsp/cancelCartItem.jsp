@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="java.sql.*" %>
-    
+
 <%
     int cartId = Integer.parseInt(request.getParameter("cart_id"));
     Connection conn = null;
@@ -15,7 +15,7 @@
         pstmt.setInt(1, cartId);
         pstmt.executeUpdate();
 
-        response.sendRedirect("/restaurant/customer/jsp/Cart.jsp"); // Redirect to the cart page
+        response.sendRedirect(request.getContextPath() + "http://localhost:8090/restaurant/customer/jsp/Cart.jsp"); // Redirect to the cart page
     } catch (Exception e) {
         out.println("Error: " + e.getMessage());
     } finally {

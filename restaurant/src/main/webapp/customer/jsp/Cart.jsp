@@ -193,7 +193,8 @@
         <h5 class="section-title ff-secondary text-center text-primary fw-normal">Our Menu</h5>
         <h1 class="mb-5">Your Shopping Cart</h1>
     </div>
-    <div class="cart-container">
+    
+      <div class="cart-container">
         <%
             Connection conn = null;
             PreparedStatement pstmt = null;
@@ -210,42 +211,39 @@
                 pstmt.setInt(1, userId);
                 rs = pstmt.executeQuery();
         %>
+        <% while (rs.next()) { 
+            BigDecimal price = rs.getBigDecimal("price");
+            int quantity = rs.getInt("quantity");
+            BigDecimal itemTotal = price.multiply(BigDecimal.valueOf(quantity));
+            total = total.add(itemTotal);
+            int cartId = rs.getInt("cart_id");
+        %>
+        <div class="cart-item">
+            <img src="<%= request.getContextPath() + "/uploads/" + rs.getString("image") %>" alt="Food Image">
+            <div class="cart-item-details">
+                <h3><%= rs.getString("name") %></h3>
+                <p>Quantity: <%= rs.getInt("quantity") %></p>
+            </div>
+            <div class="cart-item-price">
+                $<%= itemTotal %>
+            </div>
+            <div class="cart-item-actions">
+                <form action="<%= request.getContextPath() %>/customer/jsp/cancelCartItem.jsp" method="post">
+                    <input type="hidden" name="cart_id" value="<%= cartId %>">
+                    <button type="submit" class="cancel-button">Cancel</button>
+                </form>
+            </div>
+        </div>
+        <% } %>
+        <div class="cart-total">
+            Total: $<%= total %>
+        </div>
         <form action="<%= request.getContextPath() %>/customer/jsp/checkout.jsp" method="post">
-            <% while (rs.next()) { 
-                BigDecimal price = rs.getBigDecimal("price");
-                int quantity = rs.getInt("quantity");
-                BigDecimal itemTotal = price.multiply(BigDecimal.valueOf(quantity));
-                total = total.add(itemTotal);
-                int cartId = rs.getInt("cart_id");
-            %>
-            <div class="cart-item">
-                <img src="<%= request.getContextPath() + "/uploads/" + rs.getString("image") %>" alt="Food Image">
-                <div class="cart-item-details">
-                    <h3><%= rs.getString("name") %></h3>
-                    <p>Quantity: <%= rs.getInt("quantity") %></p>
-                </div>
-                <div class="cart-item-price">
-                    $<%= itemTotal %>
-                </div>
-                <div class="cart-item-actions">
-                    <form action="<%= request.getContextPath() %>/customer/jsp/cancelCartItem.jsp" method="post" style="display:inline;">
-                        <input type="hidden" name="cart_id" value="<%= cartId %>">
-                        <button type="submit" class="cancel-button">Cancel</button>
-                    </form>
-                </div>
+            <div class="cart-actions">
+                <input type="hidden" name="total" value="<%= total %>">
+                <button type="submit"><i class="las la-credit-card"></i> Proceed to Checkout</button>
+                <p><a href="<%= request.getContextPath() %>/customer/jsp/customerViewFoodItems.jsp">Keep Shopping</a></p>
             </div>
-            <% } %>
-            <div class="cart-total">
-                Total: $<%= total %>
-            </div>
-            <input type="hidden" name="total" value="<%= total %>">
-            <form action="<%= request.getContextPath() %>/customer/jsp/checkout.jsp" method="post">
-    <div class="cart-actions">
-        <button type="submit"><i class="las la-credit-card"></i> Proceed to Checkout</button>
-        <p><a href="<%= request.getContextPath() %>/customer/jsp/customerViewFoodItems.jsp">Keep Shopping</a></p>
-    </div>
-</form>
-            
         </form>
         <% 
             } catch (Exception e) {
