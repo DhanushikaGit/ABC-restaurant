@@ -14,14 +14,7 @@
             return confirm('Are you sure you want to delete this record?');
         }
 
-        // Show alert based on the session message
-        window.onload = function() {
-            const message = "<%= session.getAttribute("message") %>";
-            if (message) {
-                alert(message);
-                session.removeAttribute("message"); // Clear the message after showing it
-            }
-        };
+      
     </script>
     <style>
     /* General body styles */
@@ -187,7 +180,7 @@ main {
                                 <option value="50">50</option>
                                 <option value="100">100</option>
                             </select>
-                            <button>Add record</button>
+                           
                         </div>
 
                         <div class="browse">
@@ -256,10 +249,7 @@ main {
                 <input type="hidden" name="uid" value="<%= rs.getInt("uid") %>">
                 <input type="submit" value="Delete" class="action-button delete-button">
             </form>
-            <form action="http://localhost:8090/restaurant/ContactCustomerServlet" method="post" style="display:inline;">
-                <input type="hidden" name="email" value="<%= rs.getString("email") %>">
-                <input type="submit" value="Contact" class="action-button contact-button">
-            </form>
+            
         </td>
     </tr>
     <%

@@ -65,7 +65,7 @@ form input[type="submit"] {
 
 /* Style for the submit button */
 input[type="submit"] {
-    background-color: #007bff; /* Blue background */
+    background-color: red; /* Blue background */
     color: #fff; /* White text color */
     border: none; /* Remove default border */
     padding: 12px 20px; /* Padding inside the button */
@@ -76,7 +76,7 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-    background-color: #0056b3; /* Darker blue on hover */
+    background-color:  #FEA116; /* Darker blue on hover */
     transform: scale(1.05); /* Slightly enlarge button on hover */
 }
 
@@ -93,8 +93,8 @@ table {
 /* Style for table headers */
 table th {
     padding: 12px; /* Padding inside header cells */
-    background-color: black; /* Green background for header */
-    color: #ffffff; /* White text color */
+    background-color: ; /* Green background for header */
+    color: Black; /* White text color */
     text-align: left; /* Align text to the left */
     border-bottom: 2px solid #ddd; /* Light border at the bottom */
     font-weight: bold; /* Bold text */

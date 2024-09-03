@@ -149,22 +149,24 @@
         <h1>Manage Gallery</h1>
         <small>Home / Manage Gallery</small>
     </div>
-  <form action="http://localhost:8090/restaurant/AddGalleryServlet" method="post" enctype="multipart/form-data">
-    <input type="text" name="title" placeholder="Title" required><br><br>
-    <textarea name="description" placeholder="Description" required></textarea><br><br>
-    
-    <!-- Category Dropdown -->
-    <select name="category" required>
-        <option value="">Select Category</option>
-        <option value="Category1">Events</option>
-        <option value="Category2">People</option>
-        <!-- Add more categories as needed -->
-    </select><br><br>
 
-    <input type="file" name="image" accept="image/*" required><br><br>
-    <input type="submit" value="Add Gallery">
-</form>
-  
+    <!-- Search Form -->
+    <form action="http://localhost:8090/restaurant/admin/jsp/managegallery.jsp" method="get">
+        <input type="text" name="search" placeholder="Search by Title or Category" value="<%= request.getParameter("search") != null ? request.getParameter("search") : "" %>">
+        <input type="submit" value="Search">
+    </form>
+
+    <form action="http://localhost:8090/restaurant/AddGalleryServlet" method="post" enctype="multipart/form-data">
+        <input type="text" name="title" placeholder="Title" required><br><br>
+        <textarea name="description" placeholder="Description" required></textarea><br><br>
+        <select name="category" required>
+            <option value="">Select Category</option>
+            <option value="Category1">Events</option>
+            <option value="Category2">People</option>
+        </select><br><br>
+        <input type="file" name="image" accept="image/*" required><br><br>
+        <input type="submit" value="Add Gallery">
+    </form>
 
     <br>
     <table>
@@ -181,12 +183,23 @@
             PreparedStatement pstmt = null;
             ResultSet rs = null;
 
+            String searchQuery = request.getParameter("search");
+            String sql = "SELECT id, title, description, category, image FROM gallery";
+            if (searchQuery != null && !searchQuery.trim().isEmpty()) {
+                sql += " WHERE title LIKE ? OR category LIKE ?";
+            }
+
             try {
                 Class.forName("com.mysql.cj.jdbc.Driver");
                 conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/restaurant", "root", "1234");
-
-                String sql = "SELECT id, title, description, category, image FROM gallery";
                 pstmt = conn.prepareStatement(sql);
+
+                if (searchQuery != null && !searchQuery.trim().isEmpty()) {
+                    String searchPattern = "%" + searchQuery.trim() + "%";
+                    pstmt.setString(1, searchPattern);
+                    pstmt.setString(2, searchPattern);
+                }
+
                 rs = pstmt.executeQuery();
                 while (rs.next()) {
         %>

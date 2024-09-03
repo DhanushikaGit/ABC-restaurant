@@ -3,7 +3,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Admin Login - ABC Restaurant</title>
+    <title>Staff Login - ABC Restaurant</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -13,6 +13,7 @@
             align-items: center;
             height: 100vh;
             margin: 0;
+            background-image: linear-gradient(to right, #f4f4f4, #e0e0e0);
         }
 
         .login-container {
@@ -21,12 +22,21 @@
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             width: 300px;
+            border: 1px solid #ddd;
+            transition: all 0.3s ease;
+        }
+
+        .login-container:hover {
+            box-shadow: 0 6px 12px  #FEA116(0, 0, 0, 0.2);
+            border-color:  #FEA116;
         }
 
         h2 {
             margin-bottom: 20px;
             text-align: center;
             color: #333;
+            font-size: 24px;
+            font-weight: 600;
         }
 
         input[type="text"],
@@ -39,10 +49,18 @@
             border-radius: 4px;
             box-sizing: border-box;
             font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="password"]:focus {
+            border-color: #007bff;
+            outline: none;
         }
 
         input[type="submit"] {
-            background-color: #007bff;
+            background-color: red;
             color: #fff;
             border: none;
             padding: 12px 20px;
@@ -50,16 +68,18 @@
             cursor: pointer;
             border-radius: 4px;
             width: 100%;
+            transition: background-color 0.3s ease;
         }
 
         input[type="submit"]:hover {
-            background-color: #0056b3;
+            background-color:  #FEA116;
         }
 
         .error-message {
             color: red;
             text-align: center;
             margin-bottom: 15px;
+            font-size: 14px;
         }
     </style>
 </head>

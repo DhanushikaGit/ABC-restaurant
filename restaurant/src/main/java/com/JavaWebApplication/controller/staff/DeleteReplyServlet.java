@@ -37,7 +37,7 @@ public class DeleteReplyServlet extends HttpServlet {
             
             if (rowsAffected > 0) {
                 // Reply successfully deleted
-                response.sendRedirect("/restaurant/staff/jsp/ViewMessages.jsp");
+                response.sendRedirect("staff/jsp/ViewMessages.jsp");
             } else {
                 // Reply not found or not deleted
                 response.getWriter().println("Error: Reply with ID " + replyId + " could not be deleted. It might not exist.");

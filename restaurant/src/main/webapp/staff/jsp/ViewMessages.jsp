@@ -6,10 +6,12 @@
     <meta charset="UTF-8">
     <title>View Messages</title>
     <style>
-         :root {
-              --primary: #FEA116;
+        :root {
+            --primary: #FEA116;
             --light: #F1F8FF;
             --dark: #0F172B;
+            --border: #ddd; /* Added missing border color variable */
+            --danger: #dc3545; /* Added missing danger color variable */
         }
 
         body {
@@ -80,7 +82,6 @@
             opacity: 0.8;
         }
     </style>
-    
 </head>
 <body>
 
@@ -114,9 +115,13 @@
         <td><%= rs.getString("message") %></td>
         <td><%= rs.getTimestamp("created_at") %></td>
         <td>
-            <form action="http://localhost:8090/restaurant/staff/jsp/reply.jsp" method="get" style="display:inline;">
+            <form action="reply.jsp" method="get" style="display:inline;">
                 <input type="hidden" name="message_id" value="<%= messageId %>">
                 <input type="submit" value="Reply" class="btn btn-primary">
+            </form>
+            <form action="http://localhost:8090/restaurant/DeleteMessageServlet" method="post" onsubmit="return confirm('Are you sure you want to delete this message?');" style="display:inline;">
+                <input type="hidden" name="message_id" value="<%= messageId %>">
+                <input type="submit" value="Delete" class="btn btn-danger">
             </form>
         </td>
     </tr>
@@ -133,10 +138,10 @@
         <td colspan="6" style="background-color: #f9f9f9;">
             <strong>Reply:</strong><br>
             <textarea readonly><%= replyRs.getString("reply_content") %></textarea>
-            <form action="http://localhost:8090/restaurant/DeleteReplyServlet" method="post" onsubmit="confirmDelete(event);" style="display:inline;">
+            <form action="http://localhost:8090/restaurant/DeleteReplyServlet" method="post" onsubmit="return confirm('Are you sure you want to delete this reply?');" style="display:inline;">
                 <input type="hidden" name="reply_id" value="<%= replyId %>">
                 <input type="hidden" name="message_id" value="<%= messageId %>">
-                <input type="submit" value="Delete" class="btn btn-danger">
+                <input type="submit" value="Delete Reply" class="btn btn-danger">
             </form>
         </td>
     </tr>

@@ -412,6 +412,18 @@
   	<description></description>
   	<servlet-class>com.JavaWebApplication.controller.CheckoutServlet</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>EditStaffServlet</servlet-name>
+  	<display-name>EditStaffServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.JavaWebApplication.controller.EditStaffServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>DeleteMessageServlet</servlet-name>
+  	<display-name>DeleteMessageServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.JavaWebApplication.controller.staff.DeleteMessageServlet</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>Register</servlet-name>
   	<url-pattern>/Register</url-pattern>
@@ -683,5 +695,13 @@
   <servlet-mapping>
   	<servlet-name>2CheckoutServlet</servlet-name>
   	<url-pattern>/2CheckoutServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>EditStaffServlet</servlet-name>
+  	<url-pattern>/EditStaffServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>DeleteMessageServlet</servlet-name>
+  	<url-pattern>/DeleteMessageServlet</url-pattern>
   </servlet-mapping>
 </web-app>
