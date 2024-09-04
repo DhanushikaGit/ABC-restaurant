@@ -95,7 +95,7 @@ a {
 }
 
 a:hover {
-    text-decoration: ;
+    text-decoration: underline;
 }
 
 .footer {
