@@ -6,6 +6,22 @@
     <meta charset="UTF-8">
     <title>Delete Order</title>
     <style>
+    
+        .footer {
+            background-color: var(--dark);
+            color: #fff;
+            text-align: center;
+            padding: 15px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            left: 0;
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .footer p {
+            margin: 0;
+        }
         body {
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
@@ -47,6 +63,12 @@
     </style>
 </head>
 <body>
+<%@ include file="staffheader.jsp" %>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
     <div class="delete-container">
         <h1>Delete Order</h1>
         <%
@@ -76,5 +98,8 @@
             <button type="submit">Back to Orders</button>
         </form>
     </div>
+    <footer class="footer">
+    <p>© 2024 ABC Restaurant. All rights reserved.</p>
+</footer>
 </body>
 </html>

@@ -104,46 +104,10 @@
 </head>
 
 <body>
-    <div class="d-flex" id="wrapper">
-        <!-- Sidebar -->
-        <div class="bg-white" id="sidebar-wrapper">
-            <div class="sidebar-heading text-center py-4 primary-text fs-4 fw-bold text-uppercase border-bottom">
-                <i class="fa fa-utensils me-3"></i>ABC Restaurant
-            </div>
-            
-            <div class="list-group list-group-flush my-3">
-                <a href="/restaurant/staff/jsp/staffDashboard.jsp" class="list-group-item list-group-item-action bg-transparent second-text active">
-                    <i class="fas fa-tachometer-alt me-2"></i>Dashboard
-                </a>
-                <a href="/restaurant/staff/jsp/viewOrders.jsp" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
-                    <i class="fas fa-receipt me-2"></i>View Orders
-                </a>
-                <a href="/restaurant/staff/jsp/manageReservations.jsp" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
-                    <i class="fas fa-calendar-alt me-2"></i>Manage Reservations
-                </a>
-                <a href="/restaurant/staff/jsp/manageFeedback.jsp" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
-                    <i class="fas fa-comment-alt me-2"></i>Manage Feedback
-                </a>
-                <a href="/restaurant/staff/jsp/chat.jsp" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
-                    <i class="fas fa-comment-dots me-2"></i>Chat
-                </a>
-                <a href="/restaurant/staff/jsp/profile.jsp" class="list-group-item list-group-item-action bg-transparent text-danger fw-bold">
-                    <i class="fas fa-user me-2"></i>Profile
-                </a>
-                <a href="/restaurant/admin/jsp/adminLogin.jsp" class="list-group-item list-group-item-action bg-transparent text-danger fw-bold">
-                    <i class="fas fa-power-off me-2"></i>Logout
-                </a>
-            </div>
-        </div>
-        <!-- /#sidebar-wrapper -->
+    
+    <%@ include file="staffheader.jsp" %>
 
-        <!-- Page Content -->
-        <div id="page-content-wrapper">
-            <nav class="navbar navbar-expand-lg navbar-light bg-transparent py-4 px-4">
-                <div class="d-flex align-items-center">
-                    <i class="fas fa-align-left primary-text fs-4 me-3" id="menu-toggle"></i>
-                    <h2 class="fs-2 m-0">Manage Orders</h2>
-                </div>
+       
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -299,5 +263,7 @@
         };
     </script>
 </body>
-
+<footer class="footer">
+    <p>© 2024 ABC Restaurant. All rights reserved.</p>
+</footer>
 </html>

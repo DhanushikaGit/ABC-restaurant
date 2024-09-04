@@ -3,10 +3,34 @@
 <!DOCTYPE html>
 <html>
 <head>
+<style>
+
+        .footer {
+            background-color: var(--dark);
+            color: #fff;
+            text-align: center;
+            padding: 15px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            left: 0;
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .footer p {
+            margin: 0;
+        }
+</style>
     <meta charset="UTF-8">
     <title>Edit Reservation</title>
 </head>
 <body>
+<%@ include file="staffheader.jsp" %>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
 <h2>Edit Reservation</h2>
 
@@ -52,6 +76,8 @@
     <button type="submit">Update</button>
     <a href="/restaurant/staff/jsp/viewreservation.jsp">Cancel</a>
 </form>
-
+<footer class="footer">
+    <p>© 2024 ABC Restaurant. All rights reserved.</p>
+</footer>
 </body>
 </html>
