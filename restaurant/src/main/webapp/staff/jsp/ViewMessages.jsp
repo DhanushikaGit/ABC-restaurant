@@ -23,7 +23,7 @@
         }
 
         h2 {
-            color: var(--primary);
+            color: black;
         }
 
         form {
@@ -61,7 +61,7 @@
 
         th {
             background-color: var(--primary);
-            color: #fff;
+            color: black;
         }
 
         tr:nth-child(even) {

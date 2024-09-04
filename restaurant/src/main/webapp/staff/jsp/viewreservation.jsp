@@ -4,7 +4,8 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>View Reservations</title>
+    <title>Manage Reservations</title>
+      <link href="/restaurant/customer/images/A B C (1).png" rel="icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
                :root {
@@ -80,7 +81,7 @@
 
         th {
             background-color: var(--primary);
-            color: #fff;
+            color:black;
         }
 
         tr:nth-child(even) {

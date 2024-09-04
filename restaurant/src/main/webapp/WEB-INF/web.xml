@@ -430,6 +430,12 @@
   	<description></description>
   	<servlet-class>com.JavaWebApplication.controller.staff.DashboardServlet</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>SendReplyServlet</servlet-name>
+  	<display-name>SendReplyServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.JavaWebApplication.controller.staff.SendReplyServlet</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>Register</servlet-name>
   	<url-pattern>/Register</url-pattern>
@@ -713,5 +719,9 @@
   <servlet-mapping>
   	<servlet-name>DashboardServlet</servlet-name>
   	<url-pattern>/DashboardServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>SendReplyServlet</servlet-name>
+  	<url-pattern>/SendReplyServlet</url-pattern>
   </servlet-mapping>
 </web-app>

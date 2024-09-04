@@ -12,7 +12,7 @@
 
     <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon">
-
+ <link href="/restaurant/customer/images/A B C (1).png" rel="icon">
  <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

@@ -3,7 +3,8 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Staff Dashboard</title>
+     <link href="/restaurant/customer/images/A B C (1).png" rel="icon">
+    <title>Staff Profile</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
         :root {
@@ -96,8 +97,8 @@
         }
 
         .btn-primary-custom {
-            background-color: var(--primary);
-            color: #fff;
+            background-color: red;
+            color: black;
         }
 
         .btn-primary-custom:hover {

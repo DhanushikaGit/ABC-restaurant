@@ -4,7 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Staff Login - ABC Restaurant</title>
+     <link href="/restaurant/customer/images/A B C (1).png" rel="icon">
     <style>
+    :root {
+        --primary: #FEA116; /* Primary color */
+        --light: #F1F8FF;   /* Light color */
+        --dark: #0F172B;    /* Dark color */
+    }
+    
         body {
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;

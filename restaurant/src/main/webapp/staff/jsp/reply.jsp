@@ -6,9 +6,67 @@
     <meta charset="UTF-8">
     <title>Reply to Message</title>
     <style>
-        .btn { padding: 5px 10px; border: none; cursor: pointer; }
-        .btn-primary { background-color: #007bff; color: #fff; }
-        
+       /* Base styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--light);
+    color: var(--dark);
+}
+
+h2 {
+    color: var(--primary);
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Form styling */
+form {
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: block;
+}
+
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+
+/* Button styling */
+.btn {
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.btn-primary {
+    background-color:  red;
+    color:black;
+   
+}
+
+.btn-primary:hover {
+    background-color:  #F1F8FF;
+}
+   
         .footer {
             background-color: var(--dark);
             color: #fff;
