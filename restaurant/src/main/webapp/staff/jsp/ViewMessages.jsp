@@ -10,8 +10,8 @@
             --primary: #FEA116;
             --light: #F1F8FF;
             --dark: #0F172B;
-            --border: #ddd; /* Added missing border color variable */
-            --danger: #dc3545; /* Added missing danger color variable */
+            --border: #ddd; 
+            --danger: #dc3545;
         }
 
         body {
@@ -24,6 +24,26 @@
 
         h2 {
             color: var(--primary);
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+
+        input[type="text"] {
+            padding: 8px;
+            width: 300px;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+        }
+
+        input[type="submit"] {
+            padding: 8px 15px;
+            background-color: var(--primary);
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
         }
 
         table {
@@ -87,6 +107,12 @@
 
 <h2>Contact Messages</h2>
 
+<!-- Search Form -->
+<form action="http://localhost:8090/restaurant/staff/jsp/ViewMessages.jsp" method="get">
+    <input type="text" name="search" placeholder="Search by name, email, or subject" value="<%= request.getParameter("search") != null ? request.getParameter("search") : "" %>">
+    <input type="submit" value="Search">
+</form>
+
 <table>
     <tr>
         <th>Name</th>
@@ -101,12 +127,24 @@
         mydb db = new mydb();
         Connection conn = db.getCon();
         if (conn != null) {
-            String sql = "SELECT * FROM contact_messages ORDER BY created_at DESC";
-            try (PreparedStatement pstmt = conn.prepareStatement(sql);
-                 ResultSet rs = pstmt.executeQuery()) {
+            String searchQuery = request.getParameter("search");
+            String sql = "SELECT * FROM contact_messages";
+            if (searchQuery != null && !searchQuery.trim().isEmpty()) {
+                sql += " WHERE name LIKE ? OR email LIKE ? OR subject LIKE ?";
+            }
+            sql += " ORDER BY created_at DESC";
 
-                while (rs.next()) {
-                    int messageId = rs.getInt("id");
+            try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
+                if (searchQuery != null && !searchQuery.trim().isEmpty()) {
+                    String searchPattern = "%" + searchQuery + "%";
+                    pstmt.setString(1, searchPattern);
+                    pstmt.setString(2, searchPattern);
+                    pstmt.setString(3, searchPattern);
+                }
+
+                try (ResultSet rs = pstmt.executeQuery()) {
+                    while (rs.next()) {
+                        int messageId = rs.getInt("id");
     %>
     <tr>
         <td><%= rs.getString("name") %></td>
@@ -126,13 +164,13 @@
         </td>
     </tr>
     <%
-                    // Fetch replies for the current message
-                    String replySql = "SELECT * FROM replies WHERE message_id = ? ORDER BY replied_at DESC";
-                    try (PreparedStatement replyPstmt = conn.prepareStatement(replySql)) {
-                        replyPstmt.setInt(1, messageId);
-                        try (ResultSet replyRs = replyPstmt.executeQuery()) {
-                            while (replyRs.next()) {
-                                int replyId = replyRs.getInt("id");
+                        // Fetch replies for the current message
+                        String replySql = "SELECT * FROM replies WHERE message_id = ? ORDER BY replied_at DESC";
+                        try (PreparedStatement replyPstmt = conn.prepareStatement(replySql)) {
+                            replyPstmt.setInt(1, messageId);
+                            try (ResultSet replyRs = replyPstmt.executeQuery()) {
+                                while (replyRs.next()) {
+                                    int replyId = replyRs.getInt("id");
     %>
     <tr>
         <td colspan="6" style="background-color: #f9f9f9;">
@@ -146,6 +184,7 @@
         </td>
     </tr>
     <%
+                                }
                             }
                         }
                     }

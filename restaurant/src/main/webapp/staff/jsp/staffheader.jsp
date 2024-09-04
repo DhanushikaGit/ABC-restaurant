@@ -23,7 +23,7 @@ body {
 
 /* Header styles */
 header {
-    background-color: var(--primary);
+    background-color:#0F172B ;
     color: white;
     padding: 10px 0;
     text-align: center;
@@ -101,15 +101,21 @@ footer p {
     </style>
 </head>
 <body>
+ <div class="d-flex" id="wrapper">
+        <!-- Sidebar -->
+        <div class="bg-white" id="sidebar-wrapper">
+            <div class="sidebar-heading text-center py-4 primary-text fs-4 fw-bold text-uppercase border-bottom">
+                <i class="fa fa-utensils me-3"></i>ABC Restaurant
+            </div>
     <header>
         <h1>ABC Restaurant Staff Dashboard</h1>
         <nav>
             <ul>
-                <li><a href="viewreservation.jsp">View Reservations</a></li>
-                <li><a href="manageorders.jsp">Manage Orders</a></li>
-                <li><a href="managestaff.jsp">Manage Staff</a></li>
-                <li><a href="managegallery.jsp">Manage Gallery</a></li>
-                <li><a href="logout.jsp">Logout</a></li>
+                <li><a href="/restaurant/staff/jsp/viewreservation.jsp">View Reservations</a></li>
+                <li><a href="/restaurant/staff/jsp/manageOrders.jsp">Manage Orders</a></li>
+                <li><a href="/restaurant/staff/jsp/ViewMessages.jsp">Manage Queries</a></li>
+              
+                <li><a href="/restaurant/staff/jsp/login.jsp">Logout</a></li>
             </ul>
         </nav>
     </header>

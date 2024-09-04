@@ -424,6 +424,12 @@
   	<description></description>
   	<servlet-class>com.JavaWebApplication.controller.staff.DeleteMessageServlet</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>DashboardServlet</servlet-name>
+  	<display-name>DashboardServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.JavaWebApplication.controller.staff.DashboardServlet</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>Register</servlet-name>
   	<url-pattern>/Register</url-pattern>
@@ -703,5 +709,9 @@
   <servlet-mapping>
   	<servlet-name>DeleteMessageServlet</servlet-name>
   	<url-pattern>/DeleteMessageServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>DashboardServlet</servlet-name>
+  	<url-pattern>/DashboardServlet</url-pattern>
   </servlet-mapping>
 </web-app>

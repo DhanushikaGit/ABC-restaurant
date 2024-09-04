@@ -30,7 +30,7 @@ public class LoginServlet extends HttpServlet {
             conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/restaurant", "root", "1234");
 
             // SQL query to check if the staff member exists
-            String sql = "SELECT id, name, position FROM staff WHERE email = ? AND password = ?";
+            String sql = "SELECT id, name, position, image FROM staff WHERE email = ? AND password = ?";
             pstmt = conn.prepareStatement(sql);
             pstmt.setString(1, email);
             pstmt.setString(2, password);
@@ -42,9 +42,10 @@ public class LoginServlet extends HttpServlet {
                 session.setAttribute("staffId", rs.getInt("id"));
                 session.setAttribute("staffName", rs.getString("name"));
                 session.setAttribute("staffPosition", rs.getString("position"));
+                session.setAttribute("staffImage", rs.getString("image")); // Fetch and set the staff image
 
-                // Redirect to the EditOrder.jsp page
-                response.sendRedirect("/restaurant/staff/jsp/EditOrder.jsp");
+                // Redirect to the dashboard page
+                response.sendRedirect("/restaurant/staff/jsp/dashboard.jsp");
             } else {
                 // If the login fails, show an error message
                 request.setAttribute("errorMessage", "Invalid email or password");
