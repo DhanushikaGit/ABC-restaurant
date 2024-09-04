@@ -176,14 +176,12 @@
         <td><%= rs.getString("message") %></td>
         <td><%= rs.getTimestamp("created_at") %></td>
         <td>
-            <form action="reply.jsp" method="get" style="display:inline;">
-                <input type="hidden" name="message_id" value="<%= messageId %>">
-                <input type="submit" value="Reply" class="btn btn-primary">
-            </form>
-            <form action="http://localhost:8090/restaurant/DeleteMessageServlet" method="post" onsubmit="return confirm('Are you sure you want to delete this message?');" style="display:inline;">
-                <input type="hidden" name="message_id" value="<%= messageId %>">
-                <input type="submit" value="Delete" class="btn btn-danger">
-            </form>
+             <a href="http://localhost:8090/restaurant/staff/jsp/reply.jsp?message_id=<%= messageId %>" class="btn btn-primary">Reply</a>
+    <form action="http://localhost:8090/restaurant/DeleteMessageServlet" method="post" onsubmit="return confirm('Are you sure you want to delete this message?');" style="display:inline;">
+        <input type="hidden" name="message_id" value="<%= messageId %>">
+        <input type="submit" value="Delete" class="btn btn-danger">
+    </form>
+            
         </td>
     </tr>
     <%
