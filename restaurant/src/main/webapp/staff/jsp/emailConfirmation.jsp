@@ -37,4 +37,5 @@
         %>
     </p>
 </body>
+  <%@ include file="staffooter.jsp" %>
 </html>

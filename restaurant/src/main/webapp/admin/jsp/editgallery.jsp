@@ -143,6 +143,6 @@
     <input type="file" name="image" accept="image/*"><br><br>
     <input type="submit" value="Update Gallery Item">
 </form>
-   
+     <%@ include file="adminfooter.jsp" %>
  
 </html>

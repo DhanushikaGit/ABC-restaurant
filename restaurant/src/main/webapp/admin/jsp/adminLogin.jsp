@@ -151,4 +151,5 @@
         </form>
     </div>
 </body>
+  <%@ include file="adminfooter.jsp" %>
 </html>

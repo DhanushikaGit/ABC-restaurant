@@ -153,4 +153,5 @@ form a:hover {
         </main>
     </div>
 </body>
+  <%@ include file="adminfooter.jsp" %>
 </html>

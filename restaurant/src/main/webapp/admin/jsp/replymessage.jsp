@@ -252,4 +252,5 @@ textarea {
 
 
 </body>
+  <%@ include file="adminfooter.jsp" %>
 </html>

@@ -352,4 +352,5 @@ table td[colspan='7'] {
         %>
     </table>
 </body>
+  <%@ include file="adminfooter.jsp" %>
 </html>

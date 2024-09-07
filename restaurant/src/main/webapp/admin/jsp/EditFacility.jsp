@@ -162,4 +162,5 @@ p {
         }
     %>
 </body>
+  <%@ include file="adminfooter.jsp" %>
 </html>

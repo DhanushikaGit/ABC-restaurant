@@ -115,7 +115,7 @@
 
         .footer p {
             margin: 0;
-        }
+        
         
     </style>
 </head>
@@ -222,8 +222,7 @@
         }
     %>
 </table>
-<footer class="footer">
-    <p>© 2024 ABC Restaurant. All rights reserved.</p>
-</footer>
+
 </body>
+  <%@ include file="staffooter.jsp" %>
 </html>

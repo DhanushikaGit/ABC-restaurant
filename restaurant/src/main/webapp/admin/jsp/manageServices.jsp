@@ -257,4 +257,5 @@
         %>
     </table>
 </body>
+  <%@ include file="adminfooter.jsp" %>
 </html>

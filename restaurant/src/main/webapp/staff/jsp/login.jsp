@@ -88,22 +88,7 @@
             margin-bottom: 15px;
             font-size: 14px;
         }
-        
-        .footer {
-            background-color: var(--dark);
-            color: #fff;
-            text-align: center;
-            padding: 15px;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
-            left: 0;
-            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .footer p {
-            margin: 0;
-        }
+    
     </style>
 </head>
 <body>
@@ -123,8 +108,7 @@
             <input type="submit" value="Login">
         </form>
     </div>
-    <footer class="footer">
-    <p>© 2024 ABC Restaurant. All rights reserved.</p>
-</footer>
+ 
 </body>
+  <%@ include file="staffooter.jsp" %>
 </html>

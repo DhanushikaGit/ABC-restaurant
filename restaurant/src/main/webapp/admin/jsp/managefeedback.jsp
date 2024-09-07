@@ -336,4 +336,5 @@ table td[colspan='7'] {
     <!-- Font Awesome for icons -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
 </body>
+  <%@ include file="adminfooter.jsp" %>
 </html>

@@ -54,21 +54,7 @@
         .update-container button:hover {
             background-color: #e68900;
         }
-        .footer {
-            background-color: var(--dark);
-            color: #fff;
-            text-align: center;
-            padding: 15px;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
-            left: 0;
-            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .footer p {
-            margin: 0;
-        }
+    
     </style>
 </head>
 <body>
@@ -133,8 +119,6 @@
             <button type="submit">Back to Orders</button>
         </form>
     </div>
-</body>
-<footer class="footer">
-    <p>© 2024 ABC Restaurant. All rights reserved.</p>
-</footer>
+</body>  <%@ include file="staffooter.jsp" %>
+
 </html>

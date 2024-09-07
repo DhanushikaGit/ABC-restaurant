@@ -168,4 +168,5 @@
         <input type="submit" value="Update Food Item">
     </form>
 </body>
+  <%@ include file="adminfooter.jsp" %>
 </html>

@@ -220,4 +220,5 @@
         </table>
     </div>
 </body>
+  <%@ include file="adminfooter.jsp" %>
 </html>
