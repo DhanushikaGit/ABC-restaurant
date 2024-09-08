@@ -10,11 +10,16 @@
     <link href="/restaurant/customer/images/A B C (1).png" rel="icon">
     <style>
         /* General Styling */
+         :root {
+            --primary: #FEA116;
+            --light: #F1F8FF;
+            --dark: #0F172B;
+        }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f8f3ec;
+        background-color:  #0F172B;
             color: #333;
         }
 
@@ -32,7 +37,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background-color: #f8f3ec;
+            background-color:  #0F172B;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
 
@@ -51,7 +56,7 @@
         nav a {
             margin: 0 15px;
             text-decoration: none;
-            color: #333;
+              color: white;
             font-weight: 600;
             font-size: 16px;
             transition: color 0.3s ease;
@@ -62,7 +67,7 @@
         }
 
         nav .signup {
-            background-color: #333;
+            background-color:  #d4854c;
             color: white;
             padding: 10px 25px;
             border-radius: 25px;
@@ -137,7 +142,7 @@
 
 .text-content p {
     font-size: 22px; /* Increased font size */
-    color: #666;
+    color: white;
     margin-bottom: 20px;
 }
 
@@ -177,6 +182,21 @@
 .search-bar button:hover {
     background-color: white;
 }
+ .footer {
+            background-color: var(--dark);
+            color: #fff;
+            text-align: center;
+            padding: 15px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            left: 0;
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .footer p {
+            margin: 0;
+        }
        
     </style>
 </head>
@@ -217,6 +237,11 @@
         </div>
     </div>
 </body>
+
+<body>
+    <footer class="footer">
+    <p>© 2024 ABC Restaurant. All rights reserved.</p>
+</footer>
 </html>
 
 
