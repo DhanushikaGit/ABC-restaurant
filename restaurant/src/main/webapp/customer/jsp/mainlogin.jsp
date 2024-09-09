@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Craving Something?</title>
+    <title>ABC Restaurant</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     <link href="/restaurant/customer/images/A B C (1).png" rel="icon">
@@ -222,16 +222,17 @@
                 <h1>Craving Something?</h1>
                 <p>Let's get you started!</p>
                 <div class="search-bar">
-                    <form action="/restaurant/customer/jsp/register.jsp" method="get">
-                        <select name="location">
-                            <option value="anuradhapura">Anuradhapura</option>
-                            <option value="colombo">Colombo</option>
-                            <option value="galle">Galle</option>
-                            <option value="kandy">Kandy</option>
-                            <option value="jaffna">Jaffna</option>
-                        </select>
-                        <button type="submit">Search</button>
-                    </form>
+                   <form action="/restaurant/customer/jsp/register.jsp" method="get">
+    <select name="location">
+        <option value="anuradhapura">Anuradhapura</option>
+        <option value="colombo">Colombo</option>
+        <option value="galle">Galle</option>
+        <option value="kandy">Kandy</option>
+        <option value="jaffna">Jaffna</option>
+    </select>
+    <button type="submit">Search</button>
+</form>
+                   
                 </div>
             </div>
         </div>

@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>ABC Restaurant Customer Register page</title>
+    <title>ABC Restaurant Customer Register Page</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="<%= request.getContextPath() %>/customer/images/A B C (1).png" rel="icon">
     <style>
@@ -36,17 +36,12 @@
             border: none;
         }
 
-        
         .card-header {
-          
             color: black;
-           
             text-align: center;
-           
             font-size: 44px;
             font-weight: bold;
         }
-        
 
         .card-body {
             padding: 30px;
@@ -125,7 +120,8 @@
         .login-link a:hover {
             text-decoration: underline;
         }
-         .footer {
+
+        .footer {
             background-color: var(--dark);
             color: #fff;
             text-align: center;
@@ -151,6 +147,14 @@
             }
             return true;
         }
+
+        window.onload = function() {
+            var params = new URLSearchParams(window.location.search);
+            var location = params.get('location');
+            if (location) {
+                document.getElementById('welcome-message').innerText = `Welcome to ABC Restaurant! We are thrilled to have you from ${location.charAt(0).toUpperCase() + location.slice(1)}.`;
+            }
+        };
     </script>
 </head>
 <body>
@@ -171,6 +175,8 @@
                         }
                     %>
                 </h6>
+
+                <p id="welcome-message" style="color: var(--primary); font-size: 18px; text-align: center; margin-bottom: 20px;"></p>
 
                 <form method="post" action="<%= request.getContextPath() %>/Register" onsubmit="return validateForm()">
                     <div class="form-group row">
