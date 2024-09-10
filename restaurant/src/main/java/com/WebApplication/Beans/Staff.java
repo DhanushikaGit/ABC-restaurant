@@ -1,4 +1,4 @@
-package com.res.model;
+package com.WebApplication.Beans;
 
 public class Staff {
     private int id;
