@@ -3,7 +3,78 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <!-- Styles here -->
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: var(--light);
+        color: var(--dark);
+        margin: 0;
+        padding: 0;
+    }
+
+    h2 {
+        color: var(--primary);
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    form {
+        width: 80%;
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        border: 1px solid #ddd;
+        background-color: #fff;
+        border-radius: 8px;
+    }
+
+    p {
+        margin: 0;
+        padding: 10px 0;
+    }
+
+    label {
+        display: block;
+        font-weight: bold;
+        margin: 10px 0 5px;
+    }
+
+    textarea {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        resize: vertical;
+    }
+
+    input[type="submit"] {
+        background-color: var(--primary);
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 4px;
+    }
+
+    input[type="submit"]:hover {
+        background-color: #e59100;
+    }
+
+    a {
+        display: block;
+        margin: 20px auto;
+        text-align: center;
+        color: var(--primary);
+        text-decoration: none;
+        font-size: 16px;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+</style>
+    
 </head>
 <body>
 <%@ include file="staffheader.jsp" %>
