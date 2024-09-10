@@ -122,16 +122,17 @@
         }
 
         .success-message {
-            color: #28a745; /* Green color for success message */
-            background-color: #d4edda; /* Light green background */
-            border: 1px solid #c3e6cb; /* Border color matching the background */
-            border-radius: 5px; /* Rounded corners */
-            padding: 10px; /* Padding for spacing */
-            text-align: center; /* Center text alignment */
-            margin-bottom: 15px; /* Space below the message */
-            font-size: 16px; /* Font size for better readability */
+            color: #28a745;
+            background-color: #d4edda;
+            border: 1px solid #c3e6cb;
+            border-radius: 5px;
+            padding: 10px;
+            text-align: center;
+            margin-bottom: 15px;
+            font-size: 16px;
         }
-         .footer {
+
+        .footer {
             background-color: var(--dark);
             color: #fff;
             text-align: center;
@@ -171,12 +172,6 @@
     </script>
 </head>
 <body>
-<% 
-    String successMessage = request.getParameter("success");
-    if (successMessage != null && !successMessage.isEmpty()) {
-        out.print("<div class='success-message'>" + successMessage + "</div>");
-    }
-%>
 
 <main class="login-form">
     <div class="container">
@@ -186,6 +181,16 @@
             </div>
 
             <div class="card-body">
+                <!-- Display success message inside the login container -->
+                <% 
+                    String successMessage = request.getParameter("success");
+                    if (successMessage != null && !successMessage.isEmpty()) {
+                %>
+                <div class="success-message">
+                    <%= successMessage %>
+                </div>
+                <% } %>
+
                 <h6 class="error-message">
                     <% 
                         String errorMessage = (String) request.getAttribute("errorMessage");
