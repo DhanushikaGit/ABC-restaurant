@@ -1,9 +1,10 @@
 package com.WebApplication.RegisterBean; // Adjust this as needed
 
-import com.WebApplication.Beans.RegisterBean; // Import RegisterBean from the correct package
 import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
+
+import com.WebApplication.Beans.RegisterBean;
 
 public class RegisterBeanTest {
 

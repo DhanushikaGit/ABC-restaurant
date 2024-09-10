@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.JavaWebApplication.Model.userdb; // Ensure this is correctly imported
+import com.JavaWebApplication.Model.userdb;
 
 public class login extends HttpServlet {
     private static final long serialVersionUID = 1L;

@@ -1,4 +1,4 @@
-<%@ page import="java.sql.*, com.JavaWebApplication.Model.mydb" %>
+<%@ page import="java.sql.*,com.JavaWebApplication.Model.mydb" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
