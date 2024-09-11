@@ -157,7 +157,7 @@
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li><a class="dropdown-item" href="/restaurant/staff/jsp/dashboard.jsp">Profile</a></li>
-                                <li><a class="dropdown-item" href="/restaurant/admin/jsp/adminLogin.jsp">Logout</a></li>
+                                <li><a class="dropdown-item" href="/restaurant/staff/jsp/login.jsp">Logout</a></li>
                             </ul>
                         </li>
                     </ul>
