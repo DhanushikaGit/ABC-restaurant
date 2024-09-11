@@ -436,6 +436,24 @@
   	<description></description>
   	<servlet-class>com.JavaWebApplication.controller.staff.SendReplyServlet</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>ForgotPasswordServlet</servlet-name>
+  	<display-name>ForgotPasswordServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.JavaWebApplication.controller.ForgotPasswordServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>ResetPasswordServlet</servlet-name>
+  	<display-name>ResetPasswordServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.JavaWebApplication.controller.ResetPasswordServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>4ForgotPasswordServlet</servlet-name>
+  	<display-name>4ForgotPasswordServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.JavaWebApplication.controller.ForgotPasswordServlet</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>Register</servlet-name>
   	<url-pattern>/Register</url-pattern>
@@ -723,5 +741,17 @@
   <servlet-mapping>
   	<servlet-name>SendReplyServlet</servlet-name>
   	<url-pattern>/SendReplyServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ForgotPasswordServlet</servlet-name>
+  	<url-pattern>/ForgotPasswordServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ResetPasswordServlet</servlet-name>
+  	<url-pattern>/ResetPasswordServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>4ForgotPasswordServlet</servlet-name>
+  	<url-pattern>/4ForgotPasswordServlet</url-pattern>
   </servlet-mapping>
 </web-app>

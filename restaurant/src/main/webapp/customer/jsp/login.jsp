@@ -217,7 +217,8 @@
 
                     <div class="col-md-6 offset-md-4">
                         <input type="submit" class="btn btn-primary" value="Login">
-                        <a href="#" class="btn btn-link">Forgot Your Password?</a>
+                       <a href="<%= request.getContextPath() %>/customer/jsp/forgotpassword.jsp" class="btn btn-link">Forgot Your Password?</a>
+                       
                     </div>
                 </form>
 
