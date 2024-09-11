@@ -59,7 +59,7 @@
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Our Special</a>
     <ul class="dropdown-menu">
         <li><a href="/restaurant/customer/jsp/ViewServices.jsp" class="dropdown-item">Services</a></li>
-        <li><a href="/restaurant/customer/jsp/customerViewFoodItems.jsp" class="dropdown-item">Facilities</a></li>
+        <li><a href="/restaurant/customer/jsp/viewFacilities.jsp" class="dropdown-item">Facilities</a></li>
         <li><a href="/restaurant/customer/jsp/viewgallery.jsp" class="dropdown-item">Gallery</a></li>
     </ul>
            </div>         
@@ -74,6 +74,7 @@
 </div>
                     
                     <a href="/restaurant/customer/jsp/Contact.jsp" class="nav-item nav-link">Contact</a>
+                    <a href="/restaurant/customer/jsp/feedback.jsp" class="nav-item nav-link">Feedback</a>
                 </div>
                 <a href="/restaurant/customer/jsp/reservation.jsp" class="btn btn-primary py-2 px-4">Book A Table</a>
                 <a href="/restaurant/customer/jsp/Cart.jsp" class="nav-item nav-link">
